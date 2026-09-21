@@ -1,0 +1,11 @@
+{
+  "name": "jasa-service-ac",
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./assets/css/style.css -o ./assets/css/style.css --minify",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jasa Service & Cuci AC Rumah Panggilan Bergaransi | CV Rifqi AC (Handy Style)</title>
+  <meta name="description" content="Cara paling mudah & terpercaya merawat AC rumah Anda. Booking teknisi cuci & service AC panggilan cepat di Bekasi, Depok, dan Karawang. Garansi dingin 30 hari.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/tracking.js"></script>
+</head>
+<body class="bg-white text-slate-800 antialiased pb-24 md:pb-0">
+
+  <!-- TOP NOTIFICATION BANNER (Handy Style) -->
+  <div class="bg-slate-900 text-white text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-2 text-slate-300">
+        <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-semibold text-white">Teknisi Siaga Hari Ini:</span>
+        <span>Area Bekasi, Depok, Cikarang & Karawang (Respon &lt; 5 Menit)</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="text-blue-300 hover:text-white font-medium flex items-center gap-1 transition">
+          <span>Kebutuhan Pabrik / Kantor (B2B)?</span>
+          <span class="font-bold underline">Buka Halaman B2B &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER (HANDY STYLE CLEAN WHITE) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm transition">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3">
+        <a href="b2c.html" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-handy-blue text-white flex items-center justify-center font-black text-xl shadow-md group-hover:bg-handy-blueHover transition">
+            R
+          </div>
+          <div>
+            <div class="text-lg font-black tracking-tight text-slate-900 leading-none group-hover:text-handy-blue transition">
+              CV RIFQI AC
+            </div>
+            <div class="text-[11px] font-semibold text-handy-gray mt-0.5">
+              Service & Perawatan Rumah
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-700">
+        <a href="#layanan" class="hover:text-handy-blue transition">Semua Layanan</a>
+        <a href="#harga" class="hover:text-handy-blue transition">Biaya Transparan</a>
+        <a href="#garansi" class="hover:text-handy-blue transition">Jaminan Garansi</a>
+        <a href="#sop-teknisi" class="hover:text-handy-blue transition">Standar Bersih</a>
+        <a href="#area" class="hover:text-handy-blue transition">Area Layanan</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <a href="tel:6281288888888" data-tel-link onclick="handlePhoneClick(event)" 
+           class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-handy-blue px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 transition">
+          <svg class="w-3.5 h-3.5 text-handy-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span>Telepon</span>
+        </a>
+
+        <a href="https://wa.me/6281288888888" data-wa-type="b2cCuci" onclick="handleWhatsAppClick(event, 'b2cCuci')" 
+           aria-label="Pesan Teknisi via WhatsApp"
+           class="bg-handy-blue hover:bg-handy-blueHover text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-full shadow transition flex items-center gap-1.5 focus:ring-2 focus:ring-offset-2 focus:ring-handy-blue">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>Pesan Teknisi</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (HANDY.COM SIGNATURE HERO) -->
+  <section class="relative bg-gradient-to-b from-slate-50 via-white to-white pt-10 sm:pt-14 pb-12 sm:pb-16 px-4 sm:px-6 overflow-hidden border-b border-slate-100">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Headline & Subheadline -->
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-blue-50 text-handy-blue border border-blue-100 px-3 py-1 rounded-full text-xs font-bold mb-4">
+          <span class="w-2 h-2 rounded-full bg-handy-blue"></span>
+          Jasa Service & Perawatan AC Rumah Terpercaya
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+          Cara paling mudah dan terpercaya merawat AC rumah Anda.
+        </h1>
+        <p class="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+          Panggil teknisi berstandar SOP bersih ke rumah Anda hari ini. Pengerjaan rapi dengan cover pelindung dinding & kasur, cek tekanan freon transparan di depan Anda, serta garansi dingin 30 hari.
+        </p>
+      </div>
+
+      <!-- Quick Action Buttons (Handy Header Buttons Pill) -->
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl">
+        <a href="#layanan" class="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-slate-200 bg-white hover:border-handy-blue hover:shadow-md transition">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-blue-50 text-handy-blue flex items-center justify-center font-bold text-lg group-hover:bg-handy-blue group-hover:text-white transition">
+              💧
+            </div>
+            <div class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-handy-blue transition">
+              Cuci AC Rutin
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-slate-400 group-hover:text-handy-blue group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="#layanan" class="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-slate-200 bg-white hover:border-handy-blue hover:shadow-md transition">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-lg group-hover:bg-emerald-600 group-hover:text-white transition">
+              ❄️
+            </div>
+            <div class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-handy-blue transition">
+              Perbaikan Bocor
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-slate-400 group-hover:text-handy-blue group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="#layanan" class="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-slate-200 bg-white hover:border-handy-blue hover:shadow-md transition">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-lg group-hover:bg-amber-500 group-hover:text-white transition">
+              ⚡
+            </div>
+            <div class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-handy-blue transition">
+              Tambah Freon
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-slate-400 group-hover:text-handy-blue group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="#layanan" class="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-slate-200 bg-white hover:border-handy-blue hover:shadow-md transition">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg group-hover:bg-indigo-600 group-hover:text-white transition">
+              🔧
+            </div>
+            <div class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-handy-blue transition">
+              Bongkar Pasang
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-slate-400 group-hover:text-handy-blue group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Trust Badges Bar -->
+      <div class="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center gap-6 sm:gap-10 text-xs text-slate-500 font-medium">
+        <div class="flex items-center gap-2">
+          <span class="text-emerald-500 font-bold text-base">✓</span>
+          <span>Garansi Servis 30 Hari</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-emerald-500 font-bold text-base">✓</span>
+          <span>Cover Terpal Dinding & Kasur</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-emerald-500 font-bold text-base">✓</span>
+          <span>Harga Pasti Tanpa Akal-akalan Freon</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-emerald-500 font-bold text-base">✓</span>
+          <span>Nota Resmi CV Rifqi Berkah Teknik</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- POPULAR SERVICES SECTION (HANDY.COM SIGNATURE 4-COL CARD GRID) -->
+  <section id="layanan" class="py-12 sm:py-16 bg-handy-lightGray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-handy-blue font-bold text-xs uppercase tracking-wider">LAYANAN TERPOPULER</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+            Pilihan Servis & Perawatan AC Rumah
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1">
+            Pesan teknisi terverifikasi untuk tugas cuci dan perbaikan AC dengan tarif transparan di awal.
+          </p>
+        </div>
+        <a href="#harga" class="text-handy-blue hover:text-handy-blueHover font-bold text-xs sm:text-sm inline-flex items-center gap-1 group">
+          <span>Lihat Semua Biaya</span>
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Card Grid (Handy Style 4 Columns) -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        
+        <!-- Card 1: Cuci AC Split Regular -->
+        <div class="popular-card group bg-white rounded-2xl border border-slate-200/90 shadow-handy hover:shadow-handy-hover hover:border-handy-blue transition flex flex-col overflow-hidden">
+          <div class="relative h-36 sm:h-44 bg-slate-100 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" 
+                 alt="Teknisi Cuci AC Rumah" 
+                 class="service-card-thumb w-full h-full object-cover">
+            <div class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur px-2.5 py-1 rounded-full text-[11px] font-bold text-slate-800 shadow-sm">
+              Mulai Rp 60.000
+            </div>
+          </div>
+          <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-1">
+                <h3 class="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-handy-blue transition">
+                  Cuci AC Split
+                </h3>
+                <svg class="w-4 h-4 text-slate-400 group-hover:text-handy-blue group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </div>
+              <p class="text-xs text-slate-500 mt-1.5 line-clamp-2">
+                Pembersihan indoor, outdoor, evaporator, blower fan, & semprot drainase air.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-emerald-700 font-semibold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 1/2 PK - 1 PK
+              </span>
+              <a href="https://wa.me/6281288888888" data-wa-type="b2cCuci" onclick="handleWhatsAppClick(event, 'b2cCuci')" class="font-bold text-handy-blue hover:underline">
+                Pesan &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Perbaikan AC Bocor -->
+        <div class="popular-card group bg-white rounded-2xl border border-slate-200/90 shadow-handy hover:shadow-handy-hover hover:border-handy-blue transition flex flex-col overflow-hidden">
+          <div class="relative h-36 sm:h-44 bg-slate-100 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" 
+                 alt="Perbaikan AC Bocor Air" 
+                 class="service-card-thumb w-full h-full object-cover">
+            <div class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur px-2.5 py-1 rounded-full text-[11px] font-bold text-slate-800 shadow-sm">
+              Mulai Rp 80.000
+            </div>
+          </div>
+          <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-1">
+                <h3 class="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-handy-blue transition">
+                  Atasi AC Bocor Air
+                </h3>
+                <svg class="w-4 h-4 text-slate-400 group-hover:text-handy-blue group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </div>
+              <p class="text-xs text-slate-500 mt-1.5 line-clamp-2">
+                Tembak lendir pipa drainase, perbaiki talang air miring, dan ganti isolasi rusak.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-blue-700 font-semibold">Bergaransi 30 Hari</span>
+              <a href="https://wa.me/6281288888888" data-wa-type="b2cRepair" onclick="handleWhatsAppClick(event, 'b2cRepair')" class="font-bold text-handy-blue hover:underline">
+                Pesan &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Tambah & Isi Freon Transparan -->
+        <div class="popular-card group bg-white rounded-2xl border border-slate-200/90 shadow-handy hover:shadow-handy-hover hover:border-handy-blue transition flex flex-col overflow-hidden">
+          <div class="relative h-36 sm:h-44 bg-slate-100 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" 
+                 alt="Isi Freon AC Transparan" 
+                 class="service-card-thumb w-full h-full object-cover">
+            <div class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur px-2.5 py-1 rounded-full text-[11px] font-bold text-slate-800 shadow-sm">
+              Mulai Rp 150.000
+            </div>
+          </div>
+          <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-1">
+                <h3 class="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-handy-blue transition">
+                  Cek & Isi Freon
+                </h3>
+                <svg class="w-4 h-4 text-slate-400 group-hover:text-handy-blue group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </div>
+              <p class="text-xs text-slate-500 mt-1.5 line-clamp-2">
+                Cek tekanan manifold gauge langsung di depan Anda (R32, R410A, R22). Tanpa tipu-tipu.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-slate-600 font-medium">Ukur Tekanan PSI</span>
+              <a href="https://wa.me/6281288888888" data-wa-type="b2cRepair" onclick="handleWhatsAppClick(event, 'b2cRepair')" class="font-bold text-handy-blue hover:underline">
+                Pesan &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Bongkar Pasang Unit AC -->
+        <div class="popular-card group bg-white rounded-2xl border border-slate-200/90 shadow-handy hover:shadow-handy-hover hover:border-handy-blue transition flex flex-col overflow-hidden">
+          <div class="relative h-36 sm:h-44 bg-slate-100 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" 
+                 alt="Bongkar Pasang AC" 
+                 class="service-card-thumb w-full h-full object-cover">
+            <div class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur px-2.5 py-1 rounded-full text-[11px] font-bold text-slate-800 shadow-sm">
+              Mulai Rp 250.000
+            </div>
+          </div>
+          <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-1">
+                <h3 class="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-handy-blue transition">
+                  Bongkar Pasang AC
+                </h3>
+                <svg class="w-4 h-4 text-slate-400 group-hover:text-handy-blue group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </div>
+              <p class="text-xs text-slate-500 mt-1.5 line-clamp-2">
+                Pindah unit kamar/rumah, instalasi pipa rapi, proses vacuum wajib agar kompresor awet.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-emerald-700 font-semibold">Proses Vacuum</span>
+              <a href="https://wa.me/6281288888888" data-wa-type="b2cCuci" onclick="handleWhatsAppClick(event, 'b2cCuci')" class="font-bold text-handy-blue hover:underline">
+                Pesan &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HANDY HAPPINESS GUARANTEE SECTION (HANDY SIGNATURE GUARANTEE) -->
+  <section id="garansi" class="py-14 sm:py-20 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="bg-gradient-to-br from-blue-50/80 via-white to-emerald-50/40 rounded-3xl border border-blue-100 p-8 sm:p-12 shadow-sm">
+        
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+          
+          <div class="md:col-span-8 space-y-4">
+            <div class="inline-flex items-center gap-2 bg-emerald-100/80 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold">
+              <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>The Rifqi AC Happiness Guarantee</span>
+            </div>
+
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Kenyamanan & Dingin AC Anda, Kami Garansi Penuh.
+            </h2>
+
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Kepuasan Anda adalah komitmen utama kami. Jika setelah diservis AC Anda masih menetes, bau apek belum hilang, atau pendinginan belum maksimal dalam <strong>30 hari</strong>, tim teknisi kami akan datang kembali untuk memperbaiki <strong>100% GRATIS</strong> tanpa perdebatan.
+            </p>
+
+            <div class="grid sm:grid-cols-3 gap-4 pt-2 text-xs">
+              <div class="bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-xs">
+                <div class="font-extrabold text-slate-900 text-sm mb-0.5">Garansi 30 Hari</div>
+                <div class="text-slate-500">Ada nota fisik resmi dengan stempel tanggal garansi.</div>
+              </div>
+              <div class="bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-xs">
+                <div class="font-extrabold text-slate-900 text-sm mb-0.5">Datang Cepat</div>
+                <div class="text-slate-500">Klaim garansi diprioritaskan teknisi hari yang sama.</div>
+              </div>
+              <div class="bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-xs">
+                <div class="font-extrabold text-slate-900 text-sm mb-0.5">Tanpa Biaya Ekstra</div>
+                <div class="text-slate-500">Tidak ada biaya transport atau ongkos kedatangan ulang.</div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a href="https://wa.me/6281288888888" data-wa-type="b2cRepair" onclick="handleWhatsAppClick(event, 'b2cRepair')" 
+                 class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow transition">
+                <span>Pesan Sekarang dengan Garansi</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="md:col-span-4 flex justify-center">
+            <div class="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full bg-gradient-to-tr from-handy-blue to-emerald-400 p-1.5 shadow-xl flex items-center justify-center">
+              <div class="w-full h-full bg-white rounded-full flex flex-col items-center justify-center text-center p-6">
+                <div class="w-12 h-12 rounded-full bg-blue-50 text-handy-blue flex items-center justify-center mb-2">
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <div class="text-2xl font-black text-slate-900">30 HARI</div>
+                <div class="text-[11px] font-bold uppercase tracking-wider text-handy-blue mt-0.5">GARANSI RESMI</div>
+                <div class="text-[10px] text-slate-500 mt-1 leading-tight">Servis Ulang Gratis Jika Masih Bermasalah</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HANDY-APPROVED PROS / STANDAR BERSIH TEKNISI SECTION -->
+  <section id="sop-teknisi" class="py-14 sm:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="max-w-2xl mb-10">
+        <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider">VETTED & APPROVED TECHNICIANS</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+          Teknisi Terverifikasi dengan Standar Rumah Bersih
+        </h2>
+        <p class="text-slate-600 text-xs sm:text-sm mt-2">
+          Kami tahu kekhawatiran terbesar konsumen saat memanggil tukang AC: kamar berantakan, dinding terciprat hitam, dan vonis palsu freon habis. Inilah SOP ketat yang wajib ditaati setiap teknisi kami:
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-handy-blue hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-handy-blue flex items-center justify-center font-black text-lg mb-4">
+            01
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-base mb-2">
+            Terpal Cover Khusus Anti Cipratan
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Sebelum mesin semprot air dinyalakan, teknisi wajib memasang corong terpal plastik yang membungkus unit indoor. Air cucian mengalir aman ke ember tanpa setetes pun menciprat kasur, wallpaper, atau sofa Anda.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-handy-blue hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-lg mb-4">
+            02
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-base mb-2">
+            Cek Manifold Gauge Transparan
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Freon AC pada dasarnya adalah sistem tertutup yang tidak akan habis kecuali terjadi kebocoran pipa. Teknisi kami wajib menunjukkan jarum ukur manifold di depan Anda sebelum merekomendasikan penambahan freon.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-handy-blue hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-black text-lg mb-4">
+            03
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-base mb-2">
+            Konfirmasi Biaya Sebelum Pengerjaan
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Tidak ada biaya siluman tiba-tiba di akhir. Jika ada suku cadang yang aus (seperti kapasitor atau motor swing), teknisi akan menjelaskan estimasi harga dan meminta persetujuan Anda terlebih dahulu.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- UPFRONT PRICING TABLE (HANDY UPFRONT PRICING) -->
+  <section id="harga" class="py-14 sm:py-16 bg-handy-lightGray border-y border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-1.5 bg-blue-100/70 text-handy-blue px-3 py-1 rounded-full text-xs font-bold mb-2">
+          <span>UPFRONT & TRANSPARENT PRICING</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          Daftar Biaya Jasa Servis AC Rumah
+        </h2>
+        <p class="text-slate-600 text-xs sm:text-sm mt-1">
+          Harga jelas dan transparan. Sudah termasuk garansi servis 30 hari dan nota resmi.
+        </p>
+      </div>
+
+      <!-- Price Table Card -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="divide-y divide-slate-100">
+          
+          <div class="p-4 sm:p-5 flex items-center justify-between gap-4 hover:bg-slate-50/60 transition">
+            <div>
+              <div class="font-extrabold text-slate-900 text-sm sm:text-base">Cuci AC Split (0.5 PK s/d 1 PK)</div>
+              <div class="text-xs text-slate-500 mt-0.5">Cuci bersih indoor + outdoor, filter udara, talang, & semprot saluran pembuangan.</div>
+            </div>
+            <div class="text-right shrink-0">
+              <div class="font-extrabold text-handy-blue text-base sm:text-lg">Rp 60.000</div>
+              <div class="text-[11px] text-slate-400">per unit</div>
+            </div>
+          </div>
+
+          <div class="p-4 sm:p-5 flex items-center justify-between gap-4 hover:bg-slate-50/60 transition">
+            <div>
+              <div class="font-extrabold text-slate-900 text-sm sm:text-base">Cuci AC Split (1.5 PK s/d 2 PK)</div>
+              <div class="text-xs text-slate-500 mt-0.5">Pembersihan unit berkapasitas besar dengan semprotan bertekanan tinggi terukur.</div>
+            </div>
+            <div class="text-right shrink-0">
+              <div class="font-extrabold text-handy-blue text-base sm:text-lg">Rp 75.000</div>
+              <div class="text-[11px] text-slate-400">per unit</div>
+            </div>
+          </div>
+
+          <div class="p-4 sm:p-5 flex items-center justify-between gap-4 hover:bg-slate-50/60 transition">
+            <div>
+              <div class="font-extrabold text-slate-900 text-sm sm:text-base">Perbaikan AC Bocor / Menetes</div>
+              <div class="text-xs text-slate-500 mt-0.5">Tembak sumbatan lendir lumut pada drainase & pasang ulang pembungkus pipa peredam kondensasi.</div>
+            </div>
+            <div class="text-right shrink-0">
+              <div class="font-extrabold text-handy-blue text-base sm:text-lg">Rp 80.000</div>
+              <div class="text-[11px] text-slate-400">mulai dari</div>
+            </div>
+          </div>
+
+          <div class="p-4 sm:p-5 flex items-center justify-between gap-4 hover:bg-slate-50/60 transition">
+            <div>
+              <div class="font-extrabold text-slate-900 text-sm sm:text-base">Tambah Freon (R32 / R410A / R22)</div>
+              <div class="text-xs text-slate-500 mt-0.5">Pengisian freon murni sesuai standar tekanan pabrikan (hanya diisi jika manifold menunjukkan kurang).</div>
+            </div>
+            <div class="text-right shrink-0">
+              <div class="font-extrabold text-handy-blue text-base sm:text-lg">Rp 150.000</div>
+              <div class="text-[11px] text-slate-400">mulai dari</div>
+            </div>
+          </div>
+
+          <div class="p-4 sm:p-5 flex items-center justify-between gap-4 hover:bg-slate-50/60 transition">
+            <div>
+              <div class="font-extrabold text-slate-900 text-sm sm:text-base">Bongkar Pasang AC (Pindah Unit)</div>
+              <div class="text-xs text-slate-500 mt-0.5">Pelepasan unit lama, pasang di lokasi baru, proses vacuum sistem pipa agar sirkulasi freon optimal.</div>
+            </div>
+            <div class="text-right shrink-0">
+              <div class="font-extrabold text-handy-blue text-base sm:text-lg">Rp 250.000</div>
+              <div class="text-[11px] text-slate-400">mulai dari</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="bg-slate-50 p-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Semua jasa pengerjaan otomatis tercover garansi 30 hari.</span>
+          </div>
+          <a href="https://wa.me/6281288888888" data-wa-type="b2cCuci" onclick="handleWhatsAppClick(event, 'b2cCuci')" 
+             class="bg-handy-blue hover:bg-handy-blueHover text-white font-bold px-4 py-2 rounded-full transition text-xs">
+            Konsultasi / Pesan via WA &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AREA COVERAGE (HANDY POPULAR LOCATIONS) -->
+  <section id="area" class="py-14 sm:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-handy-blue font-bold text-xs uppercase tracking-wider">COVERAGE AREA</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+          Jangkauan Teknisi Panggilan Cepat
+        </h2>
+        <p class="text-slate-600 text-xs sm:text-sm mt-1">
+          Teknisi tersebar di berbagai pos wilayah untuk memastikan waktu tempuh tercepat ke alamat Anda.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <!-- Bekasi -->
+        <div class="border border-slate-200 rounded-2xl p-6 bg-slate-50/50">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-xl bg-blue-100 text-handy-blue flex items-center justify-center font-bold">
+              📍
+            </div>
+            <div>
+              <div class="font-extrabold text-slate-900 text-base">Kota & Kab. Bekasi</div>
+              <div class="text-xs text-emerald-600 font-semibold">Siaga 6 Tim Teknisi</div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Bekasi Barat, Timur, Selatan, Utara, Summarecon, Grand Galaxy, Rawalumbu, Tambun, Cibitung, Cikarang Kota, Deltamas.
+          </p>
+        </div>
+
+        <!-- Depok -->
+        <div class="border border-slate-200 rounded-2xl p-6 bg-slate-50/50">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-xl bg-blue-100 text-handy-blue flex items-center justify-center font-bold">
+              📍
+            </div>
+            <div>
+              <div class="font-extrabold text-slate-900 text-base">Kota Depok & Sekitar</div>
+              <div class="text-xs text-emerald-600 font-semibold">Siaga 4 Tim Teknisi</div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Margonda, Beji, Sukmajaya, Pancoran Mas, Cimanggis, Cinere, Sawangan, Kelapa Dua, Cibubur perbatasan.
+          </p>
+        </div>
+
+        <!-- Karawang -->
+        <div class="border border-slate-200 rounded-2xl p-6 bg-slate-50/50">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-xl bg-blue-100 text-handy-blue flex items-center justify-center font-bold">
+              📍
+            </div>
+            <div>
+              <div class="font-extrabold text-slate-900 text-base">Karawang & Sekitar</div>
+              <div class="text-xs text-emerald-600 font-semibold">Siaga 4 Tim Teknisi</div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Karawang Barat, Galuh Mas, Telukjambe, Kosambi, Klari, Cikampek, Resinda, Grand Taruma.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DIRECT WHATSAPP BOOKING CALLOUT -->
+  <section class="py-14 sm:py-16 bg-slate-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div class="inline-flex items-center gap-2 bg-slate-800 text-blue-300 px-3 py-1 rounded-full text-xs font-bold mb-4">
+        <span>BOOKING CEPAT DALAM 60 DETIK</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+        AC di Rumah Sedang Panas atau Menetes Air?
+      </h2>
+      <p class="mt-3 text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+        Kirim pesan WhatsApp sekarang. CS kami langsung mengonfirmasi alamat dan mencocokkan jadwal teknisi terdekat dalam hitungan menit.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="https://wa.me/6281288888888" data-wa-type="b2cRepair" onclick="handleWhatsAppClick(event, 'b2cRepair')" 
+           aria-label="Panggil Teknisi via WhatsApp"
+           class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm px-8 py-3.5 rounded-full shadow-lg transition flex items-center justify-center gap-2">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>Panggil Teknisi via WhatsApp</span>
+        </a>
+        <a href="tel:6281288888888" data-tel-link onclick="handlePhoneClick(event)" 
+           class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm px-6 py-3.5 rounded-full border border-slate-700 transition">
+          Telepon: 0812-8888-8888
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (HANDY STYLE CLEAN MULTI-COLUMN) -->
+  <footer class="bg-white border-t border-slate-200 text-slate-600 text-xs py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-slate-100">
+        
+        <!-- Col 1: Brand -->
+        <div class="col-span-2 space-y-3">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-handy-blue text-white flex items-center justify-center font-black text-base">
+              R
+            </div>
+            <div class="font-extrabold text-slate-900 text-base">CV RIFQI AC</div>
+          </div>
+          <p class="text-slate-500 text-xs leading-relaxed max-w-sm">
+            Layanan service, cuci, dan perbaikan AC rumah tangga panggilan bergaransi resmi. Didukung oleh teknisi berpengalaman dengan komitmen pengerjaan bersih dan biaya transparan.
+          </p>
+          <div class="text-xs text-slate-500 pt-1">
+            <strong>Legalitas Usaha:</strong> CV Rifqi Berkah Teknik (NIB & NPWP Aktif)
+          </div>
+        </div>
+
+        <!-- Col 2: Layanan Rumah -->
+        <div>
+          <div class="font-bold text-slate-900 text-sm mb-3">Layanan Rumah</div>
+          <ul class="space-y-2">
+            <li><a href="#layanan" class="hover:text-handy-blue">Cuci AC Split 1 PK</a></li>
+            <li><a href="#layanan" class="hover:text-handy-blue">Cuci AC Split 2 PK</a></li>
+            <li><a href="#layanan" class="hover:text-handy-blue">Perbaikan AC Bocor Air</a></li>
+            <li><a href="#layanan" class="hover:text-handy-blue">Tambah Freon R32/R410A</a></li>
+            <li><a href="#layanan" class="hover:text-handy-blue">Bongkar Pasang Unit</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Jaminan & Info -->
+        <div>
+          <div class="font-bold text-slate-900 text-sm mb-3">Kepercayaan</div>
+          <ul class="space-y-2">
+            <li><a href="#garansi" class="hover:text-handy-blue">The Happiness Guarantee</a></li>
+            <li><a href="#sop-teknisi" class="hover:text-handy-blue">Standar SOP Bersih</a></li>
+            <li><a href="#harga" class="hover:text-handy-blue">Transparansi Biaya</a></li>
+            <li><a href="#area" class="hover:text-handy-blue">Area Jangkauan</a></li>
+            <li><a href="index.html" class="text-handy-blue font-bold">Layanan Pabrik / B2B &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Kontak Cepat -->
+        <div>
+          <div class="font-bold text-slate-900 text-sm mb-3">Hubungi Kami</div>
+          <ul class="space-y-2 text-slate-600">
+            <li>WhatsApp: 0812-8888-8888</li>
+            <li>Telepon: 0812-8888-8888</li>
+            <li>Jam Kerja: Setiap Hari (08:00 - 20:00 WIB)</li>
+            <li>Workshop: Bekasi Timur & Karawang</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Attribution -->
+      <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-400 text-center sm:text-left">
+        <div>
+          &copy; 2026 CV Rifqi Berkah Teknik (CV Rifqi AC). Hak cipta dilindungi undang-undang.
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="index.html" class="text-handy-blue font-semibold hover:underline">Halaman B2B Pabrik & Kantor</a>
+          <span>&bull;</span>
+          <a href="#garansi" class="hover:text-slate-600">Ketentuan Garansi 30 Hari</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY BOTTOM ACTION BAR (HANDY STYLE) -->
+  <div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white/95 backdrop-blur border-t border-slate-200 p-2.5 safe-bottom-padding flex items-center gap-2 shadow-lg">
+    <a href="tel:6281288888888" data-tel-link onclick="handlePhoneClick(event)" 
+       class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 text-center font-bold py-3 rounded-xl text-xs border border-slate-200 flex items-center justify-center gap-1.5 focus:outline-none">
+      <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      <span>Telepon</span>
+    </a>
+    <a href="https://wa.me/6281288888888" data-wa-type="b2cRepair" onclick="handleWhatsAppClick(event, 'b2cRepair')" 
+       aria-label="Pesan Teknisi via WhatsApp"
+       class="flex-[2] bg-handy-blue hover:bg-handy-blueHover text-white text-center font-extrabold py-3 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-md focus:outline-none">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+      <span>Pesan Teknisi (WA)</span>
+    </a>
+  </div>
+
+</body>
+</html>
