@@ -11,6 +11,76 @@
   
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/tracking.js"></script>
+
+  <!-- Schema.org JSON-LD (HVACBusiness & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HVACBusiness",
+        "@id": "https://jasa-service-ac.tech1solusi.workers.dev/#organization",
+        "name": "CV Rifqi Berkah Teknik (CV Rifqi AC)",
+        "alternateName": "CV Rifqi AC",
+        "description": "Vendor resmi kontrak perawatan & service HVAC untuk kawasan industri pabrik, gedung komersial, dan perkantoran di Bekasi, Cikarang, dan Karawang.",
+        "url": "https://jasa-service-ac.tech1solusi.workers.dev/",
+        "telephone": "+6281288888888",
+        "priceRange": "$$",
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Bekasi" },
+          { "@type": "AdministrativeArea", "name": "Cikarang" },
+          { "@type": "AdministrativeArea", "name": "Karawang" },
+          { "@type": "AdministrativeArea", "name": "Depok" }
+        ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Apakah CV Rifqi AC menerbitkan e-Faktur Pajak PPN dan dokumen legalitas resmi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ya, CV Rifqi Berkah Teknik berbadan hukum resmi dengan NIB OSS dan NPWP aktif, serta menerbitkan e-Faktur Pajak PPN, Surat Penawaran Harga (SPH), SPK, dan Berita Acara Serah Terima (BAST) untuk audit procurement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apakah teknisi memenuhi standar K3 dan siap safety induction kawasan industri?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Seluruh teknisi kami dilengkapi APD lengkap standar SNI (helm safety, rompi reflektif, safety shoes sol baja) dan berpengalaman mengikuti prosedur izin kerja (JSA/Work Permit) di kawasan industri MM2100, KIIC, Jababeka, EJIP, dan Surya Cipta."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apakah melayani pekerjaan di akhir pekan atau lembur malam saat pabrik shutdown?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ya, jadwal perawatan berkala dapat disesuaikan saat plant shutdown, hari Sabtu/Minggu, maupun shift lembur malam sehingga operasional lini manufaktur Anda tidak terganggu."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Berapa lama SLA waktu respon darurat untuk ruang server vital?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dalam kontrak pemeliharaan resmi, kami menyertakan komitmen SLA respon darurat di bawah 3 jam untuk area kritis dan ruang server dengan opsi penyediaan unit pendingin cadangan."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-corporate-grayBg text-slate-800 antialiased pb-24 md:pb-0 font-sans selection:bg-sky-500 selection:text-white">
 
@@ -193,8 +263,8 @@
             </div>
 
             <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-slate-600 text-[11px] leading-relaxed flex items-start gap-2">
-              <svg class="w-4 h-4 text-corporate-blue shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <span>Tiket survey langsung diverifikasi oleh Manajer Operasional. Jadwal kunjungan teknis dapat disesuaikan tanpa mengganggu jalannya produksi.</span>
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span><strong>Respon Cepat:</strong> Tiket survey langsung diverifikasi engineer kami dalam <strong>&lt; 15 menit</strong> di jam kerja. Jadwal visit dapat disesuaikan tanpa mengganggu jalannya produksi.</span>
             </div>
 
             <button type="submit" 
@@ -594,6 +664,79 @@
             </a>
           </div>
         </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- B2B FAQ SECTION -->
+  <section id="faq" class="py-14 sm:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-corporate-blue font-mono text-xs font-bold uppercase tracking-wider">FAQ KORPORAT & PABRIK</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-corporate-navy mt-1 tracking-tight">
+          Pertanyaan Umum Pengadaan & Kontrak HVAC
+        </h2>
+        <p class="text-slate-600 text-xs sm:text-sm mt-2">
+          Transparansi legalitas, sertifikasi teknisi, dan standar kepatuhan operasional untuk kemudahan proses administrasi tim GA & Purchasing.
+        </p>
+      </div>
+
+      <div class="space-y-3.5">
+        
+        <!-- FAQ 1 -->
+        <details class="group bg-white rounded-xl border border-slate-200 p-5 shadow-2xs transition hover:border-corporate-blue">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-corporate-navy text-sm sm:text-base select-none">
+            <span>Apakah CV Rifqi AC berbadan hukum resmi dan bisa menerbitkan e-Faktur Pajak?</span>
+            <span class="ml-4 shrink-0 transition-transform duration-200 group-open:rotate-180 text-slate-400 group-hover:text-corporate-blue">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Ya, kami berbadan hukum resmi CV Rifqi Berkah Teknik dengan NIB terdaftar OSS. Kami adalah Pengusaha Kena Pajak (PKP) resmi dan siap menerbitkan e-Faktur Pajak PPN 11%, melengkapi dokumen PO, BAST (Berita Acara Serah Terima), serta invoice resmi bertempo (TOP) sesuai kesepakatan corporate vendor.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="group bg-white rounded-xl border border-slate-200 p-5 shadow-2xs transition hover:border-corporate-blue">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-corporate-navy text-sm sm:text-base select-none">
+            <span>Apakah teknisi dibekali sertifikasi K3 dan APD standar keselamatan industri?</span>
+            <span class="ml-4 shrink-0 transition-transform duration-200 group-open:rotate-180 text-slate-400 group-hover:text-corporate-blue">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Tentu. Seluruh teknisi HVAC kami terlatih dalam standar K3, bersertifikasi BNSP Teknisi Refrigerasi, dan diwajibkan menggunakan APD SNI lengkap (safety helmet, safety shoes, body harness untuk pekerjaan di ketinggian). Tim kami siap mematuhi prosedur safety induction di area pabrik dan kawasan industri.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="group bg-white rounded-xl border border-slate-200 p-5 shadow-2xs transition hover:border-corporate-blue">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-corporate-navy text-sm sm:text-base select-none">
+            <span>Bagaimana fleksibilitas jadwal maintenance agar tidak mengganggu operasional produksi?</span>
+            <span class="ml-4 shrink-0 transition-transform duration-200 group-open:rotate-180 text-slate-400 group-hover:text-corporate-blue">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Kami menyediakan jadwal pemeliharaan fleksibel di luar jam kerja reguler, termasuk shift malam, akhir pekan (Sabtu-Minggu), atau saat agenda plant shutdown tahunan, sehingga aktivitas operasional kantor dan lini manufaktur Anda tetap berjalan tanpa hambatan.
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="group bg-white rounded-xl border border-slate-200 p-5 shadow-2xs transition hover:border-corporate-blue">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-corporate-navy text-sm sm:text-base select-none">
+            <span>Berapa respon time SLA darurat untuk area kritis seperti Server Room?</span>
+            <span class="ml-4 shrink-0 transition-transform duration-200 group-open:rotate-180 text-slate-400 group-hover:text-corporate-blue">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Bagi klien kontrak pemeliharaan, kami memberikan jaminan Service Level Agreement (SLA) respon kedatangan teknisi maksimal 3 jam ke lokasi untuk fasilitas vital seperti Server Room, Data Center, atau laboratorium dengan opsi penyediaan unit pendingin cadangan.
+          </div>
+        </details>
 
       </div>
 

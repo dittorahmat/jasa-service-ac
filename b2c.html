@@ -11,6 +11,75 @@
   
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/tracking.js"></script>
+
+  <!-- Schema.org JSON-LD (HVACBusiness & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HVACBusiness",
+        "@id": "https://jasa-service-ac.tech1solusi.workers.dev/b2c.html#organization",
+        "name": "CV Rifqi AC - Service & Perawatan Rumah",
+        "alternateName": "CV Rifqi Berkah Teknik",
+        "description": "Layanan servis, cuci AC rutin, dan perbaikan AC rumah bergaransi dingin 30 hari di Bekasi, Depok, dan Karawang. Standar teknisi bersih dengan cover pelindung dinding.",
+        "url": "https://jasa-service-ac.tech1solusi.workers.dev/b2c.html",
+        "telephone": "+6281288888888",
+        "priceRange": "$",
+        "areaServed": [
+          { "@type": "City", "name": "Bekasi" },
+          { "@type": "City", "name": "Depok" },
+          { "@type": "City", "name": "Karawang" }
+        ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Apakah ada biaya di muka (DP) sebelum teknisi datang?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tidak ada uang muka (DP). Anda hanya membayar setelah pekerjaan servis atau cuci AC selesai dikerjakan dan AC dipastikan kembali dingin normal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Bagaimana ketentuan garansi servis dingin 30 hari?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Setiap pengerjaan resmi mendapatkan nota fisik berstempel garansi 30 hari. Jika dalam 30 hari AC kembali bocor menetes atau kurang dingin, teknisi kami datang kembali untuk perbaikan ulang 100% gratis."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apakah dinding kamar atau kasur aman dari cipratan air kotor saat cuci AC?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sangat aman. Teknisi kami wajib memasang terpal corong khusus pembungkus unit indoor sebelum semprotan air dinyalakan. Air cucian dialirkan langsung ke ember tanpa menciprat kasur, wallpaper, atau perabotan Anda."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apakah freon pasti habis setiap kali cuci AC?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tidak. Sistem freon AC tertutup dan tidak akan berkurang kecuali terjadi kebocoran pipa. Teknisi kami wajib menunjukkan jarum manifold gauge di depan Anda sebelum merekomendasikan penambahan freon."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-white text-slate-800 antialiased pb-24 md:pb-0 font-sans selection:bg-blue-500 selection:text-white">
 
@@ -93,6 +162,19 @@
         <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
           Panggil teknisi berstandar SOP bersih ke rumah Anda hari ini. Pengerjaan rapi dengan cover pelindung dinding & kasur, cek tekanan freon transparan di depan Anda, serta jaminan <strong>garansi dingin 30 hari</strong>.
         </p>
+
+        <!-- Primary Action & Micro-copy Reassurance -->
+        <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
+          <a href="https://wa.me/6281288888888" data-wa-type="b2cCuci" onclick="handleWhatsAppClick(event, 'b2cCuci')" 
+             aria-label="Pesan Teknisi AC via WhatsApp"
+             class="bg-handy-blue hover:bg-handy-blueHover text-white text-sm sm:text-base font-extrabold px-6 py-3.5 rounded-lg shadow-md transition inline-flex items-center justify-center gap-2 active:scale-[0.98]">
+            <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            <span>Pesan Teknisi via WhatsApp</span>
+          </a>
+          <span class="text-xs text-slate-500 font-medium">
+            <span class="text-emerald-600 font-bold">✓ Tanpa DP</span> &bull; Bayar Pasca Servis &bull; Garansi 30 Hari
+          </span>
+        </div>
       </div>
 
       <!-- Quick Action Category Cards (Clean Vector Icons, No Slop Emojis) -->
@@ -469,9 +551,14 @@
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         <div class="divide-y divide-slate-100">
           
-          <div class="p-4 sm:p-5 flex items-center justify-between gap-4 hover:bg-slate-50/60 transition">
+          <div class="p-4 sm:p-5 flex items-center justify-between gap-4 bg-blue-50/30 hover:bg-blue-50/60 transition">
             <div>
-              <div class="font-extrabold text-slate-900 text-sm sm:text-base">Cuci AC Split (0.5 PK s/d 1 PK)</div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="font-extrabold text-slate-900 text-sm sm:text-base">Cuci AC Split (0.5 PK s/d 1 PK)</span>
+                <span class="bg-amber-100 text-amber-900 border border-amber-300 font-mono text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                  PALING POPULER
+                </span>
+              </div>
               <div class="text-xs text-slate-500 mt-0.5">Cuci bersih indoor + outdoor, filter udara, talang, & semprot saluran pembuangan.</div>
             </div>
             <div class="text-right shrink-0">
@@ -635,6 +722,79 @@
           Telepon: 0812-8888-8888
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- B2C FAQ SECTION -->
+  <section id="faq" class="py-14 sm:py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-handy-blue font-bold text-xs uppercase tracking-wider">TANYA JAWAB (FAQ)</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+          Pertanyaan Seputar Layanan AC Rumah
+        </h2>
+        <p class="text-slate-600 text-xs sm:text-sm mt-1">
+          Ketahui komitmen transparansi, garansi, dan standar kerja bersih teknisi CV Rifqi AC sebelum memesan.
+        </p>
+      </div>
+
+      <div class="space-y-3.5">
+        
+        <!-- FAQ 1 -->
+        <details class="group bg-white rounded-xl border border-slate-200 p-5 shadow-2xs transition hover:border-handy-blue">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-extrabold text-slate-900 text-sm sm:text-base select-none">
+            <span>Apakah saya perlu membayar uang muka (DP) sebelum teknisi datang?</span>
+            <span class="ml-4 shrink-0 transition-transform duration-200 group-open:rotate-180 text-slate-400 group-hover:text-handy-blue">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Tidak perlu DP sama sekali. Anda cukup memesan jadwal lewat WhatsApp, teknisi kami datang ke rumah, melakukan pemeriksaan dan pengerjaan. Pembayaran baru dilakukan setelah pekerjaan tuntas dan AC Anda kembali dingin normal (bisa via transfer bank atau tunai).
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="group bg-white rounded-xl border border-slate-200 p-5 shadow-2xs transition hover:border-handy-blue">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-extrabold text-slate-900 text-sm sm:text-base select-none">
+            <span>Bagaimana prosedur klaim garansi 30 hari jika AC kembali bermasalah?</span>
+            <span class="ml-4 shrink-0 transition-transform duration-200 group-open:rotate-180 text-slate-400 group-hover:text-handy-blue">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Sangat mudah dan tanpa ribet. Cukup kirimkan pesan ke WhatsApp kami dengan menyebutkan nomor nota digital Anda. Kami akan menjadwalkan kunjungan teknisi ulang secara prioritas tanpa biaya jasa tambahan (100% Free Revisi) selama masih dalam periode 30 hari.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="group bg-white rounded-xl border border-slate-200 p-5 shadow-2xs transition hover:border-handy-blue">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-extrabold text-slate-900 text-sm sm:text-base select-none">
+            <span>Apakah ruangan dan kasur saya aman dari cipratan air saat cuci AC?</span>
+            <span class="ml-4 shrink-0 transition-transform duration-200 group-open:rotate-180 text-slate-400 group-hover:text-handy-blue">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pasti aman. Setiap teknisi kami wajib menggunakan SOP kerja bersih: memasang plastik corong cuci khusus penampung air kotor, menutup perabot/kasur di bawah AC dengan terpal pelindung, serta mengelap bersih lantai setelah pekerjaan selesai.
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="group bg-white rounded-xl border border-slate-200 p-5 shadow-2xs transition hover:border-handy-blue">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-extrabold text-slate-900 text-sm sm:text-base select-none">
+            <span>Bagaimana cara memastikan apakah freon AC saya benar-benar kurang atau tidak?</span>
+            <span class="ml-4 shrink-0 transition-transform duration-200 group-open:rotate-180 text-slate-400 group-hover:text-handy-blue">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Kami menjunjung kejujuran teknis. Teknisi kami akan memperlihatkan angka jarum manifold gauge dan tang ampere langsung di depan Anda sebelum melakukan tindakan apa pun. Jika tekanan freon masih normal (sesuai standar 140-150 psi untuk R32/R410A), teknisi tidak akan menyarankan pengisian freon.
+          </div>
+        </details>
+
+      </div>
+
     </div>
   </section>
 
