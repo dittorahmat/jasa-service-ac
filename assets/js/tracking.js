@@ -263,15 +263,30 @@ function getWhatsAppUrl(type) {
 }
 
 /**
+ * Deteksi perangkat: apakah pengunjung menggunakan desktop/laptop?
+ */
+function isDesktopDevice() {
+  const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const isWideScreen = window.innerWidth >= 768;
+  return isWideScreen && !isMobileUA;
+}
+
+/**
  * Handle direct click tombol WhatsApp
+ * Pada mobile: langsung buka aplikasi WhatsApp
+ * Pada desktop: munculkan RFQ Modal penangkap prospek agar tidak drop-off
  */
 function handleWhatsAppClick(event, type) {
   if (event) event.preventDefault();
   const targetUrl = getWhatsAppUrl(type);
-  
-  trackConversion(function() {
-    window.open(targetUrl, '_blank', 'noopener,noreferrer');
-  });
+
+  if (isDesktopDevice()) {
+    openRfqModal(type, targetUrl);
+  } else {
+    trackConversion(function() {
+      window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    });
+  }
 }
 
 /**
@@ -283,9 +298,13 @@ function handleErrorCodeClick(event, errorCode, brand) {
   const fullMessage = baseMessage + getCampaignSuffix();
   const targetUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
 
-  trackConversion(function() {
-    window.open(targetUrl, '_blank', 'noopener,noreferrer');
-  });
+  if (isDesktopDevice()) {
+    openRfqModal('b2bDiagnostic', targetUrl, `Kode Error: ${errorCode || '-'} (${brand || 'HVAC'})`);
+  } else {
+    trackConversion(function() {
+      window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    });
+  }
 }
 
 /**
@@ -297,6 +316,161 @@ function handlePhoneClick(event, phoneNumber) {
   
   trackConversion(function() {
     window.location.href = telUrl;
+  });
+}
+
+/**
+ * RFQ Modal DOM Injection & Controller Engine
+ */
+let currentRfqTargetUrl = '';
+
+function injectRfqModalDOM() {
+  if (document.getElementById('rfq-desktop-modal')) return;
+
+  const modalHtml = `
+  <div id="rfq-desktop-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-xs hidden transition-opacity duration-200">
+    <div class="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform transition-all text-slate-800 font-sans">
+      <!-- Modal Header -->
+      <div class="bg-corporate-navy px-6 py-4 flex items-center justify-between border-b border-corporate-navyLight">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-corporate-blue text-white flex items-center justify-center font-mono font-black text-sm">RAC</div>
+          <div>
+            <h3 class="text-sm font-bold text-white leading-tight">Permintaan Penawaran Resmi &amp; Survey</h3>
+            <p class="text-[11px] text-slate-300">CV Rifqi AC &bull; Respon Cepat Pabrik &amp; Kawasan Industri</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeRfqModal()" class="text-slate-300 hover:text-white transition p-1.5 rounded-lg hover:bg-white/10" aria-label="Tutup Modal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6">
+        <div class="flex items-center gap-2 p-3 bg-sky-50 border border-sky-200 rounded-xl mb-5 text-xs text-sky-900">
+          <svg class="w-4 h-4 text-sky-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Pilih metode tercepat untuk fasilitas Anda: Isi formulir resmi (RFQ) atau lanjut ke WhatsApp Web.</span>
+        </div>
+
+        <form id="rfq-desktop-form" onsubmit="submitDesktopRfq(event)">
+          <div class="grid grid-cols-2 gap-3.5 mb-3.5">
+            <div>
+              <label class="block text-xs font-bold text-corporate-navy mb-1">Nama Perusahaan / PT <span class="text-rose-500">*</span></label>
+              <input type="text" id="rfq-company" required placeholder="Contoh: PT Manufaktur Cikarang" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-corporate-blue">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-corporate-navy mb-1">Kawasan Industri / Lokasi <span class="text-rose-500">*</span></label>
+              <input type="text" id="rfq-location" required placeholder="Contoh: MM2100 / KIIC / Jababeka" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-corporate-blue">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-corporate-navy mb-1">Nomor Telepon / PIC <span class="text-rose-500">*</span></label>
+              <input type="tel" id="rfq-phone" required placeholder="Contoh: 0812-xxxx-xxxx" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-corporate-blue">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-corporate-navy mb-1">Email Kantor (Untuk Dokumen Penawaran)</label>
+              <input type="email" id="rfq-email" placeholder="procurement@perusahaan.co.id" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-corporate-blue">
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <label class="block text-xs font-bold text-corporate-navy mb-1">Jenis Kebutuhan / Permasalahan HVAC</label>
+            <textarea id="rfq-needs" rows="2" placeholder="Contoh: Kontrak berkala 30 unit AC kantor & Chiller trip HP" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-corporate-blue"></textarea>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-3">
+            <button type="submit" class="w-full sm:flex-1 inline-flex items-center justify-center gap-2 bg-corporate-blue hover:bg-sky-700 text-white font-bold text-xs py-3 px-4 rounded-lg transition active:scale-[0.98] shadow-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Kirim Formulir RFQ Resmi</span>
+            </button>
+            <button type="button" onclick="continueToWhatsAppWeb()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-3 px-4 rounded-lg transition active:scale-[0.98]">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.668-.699c.969.539 1.772.825 2.792.826 3.183 0 5.77-2.586 5.77-5.768 0-3.18-2.588-5.767-5.77-5.767zm7.55 5.766c.002 4.148-3.374 7.525-7.55 7.525-1.328 0-2.588-.348-3.69-.958l-4.341 1.137 1.159-4.227c-.668-1.157-1.02-2.479-1.02-3.839 0-4.147 3.376-7.524 7.55-7.524 4.148 0 7.55 3.376 7.55 7.524z"/></svg>
+              <span>Lanjut ke WhatsApp Web</span>
+            </button>
+          </div>
+        </form>
+
+        <div id="rfq-success-message" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-center">
+          <div class="text-emerald-700 font-bold text-sm mb-1">Permintaan RFQ Berhasil Dikirim!</div>
+          <p class="text-xs text-slate-600 mb-3">Tim sales &amp; engineering CV Rifqi AC akan segera menghubungi PIC perusahaan Anda untuk verifikasi teknis.</p>
+          <button type="button" onclick="closeRfqModal()" class="px-4 py-1.5 bg-slate-800 text-white rounded-lg text-xs font-semibold hover:bg-slate-700">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  `;
+
+  document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+  // Close on backdrop click
+  const modal = document.getElementById('rfq-desktop-modal');
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeRfqModal();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeRfqModal();
+    }
+  });
+}
+
+function openRfqModal(type, targetUrl, prefillNeed) {
+  injectRfqModalDOM();
+  currentRfqTargetUrl = targetUrl || getWhatsAppUrl(type);
+
+  const modal = document.getElementById('rfq-desktop-modal');
+  const needsInput = document.getElementById('rfq-needs');
+  const successBox = document.getElementById('rfq-success-message');
+  const form = document.getElementById('rfq-desktop-form');
+
+  if (prefillNeed && needsInput) {
+    needsInput.value = prefillNeed;
+  }
+  if (successBox) successBox.classList.add('hidden');
+  if (form) form.classList.remove('hidden');
+
+  modal.classList.remove('hidden');
+}
+
+function closeRfqModal() {
+  const modal = document.getElementById('rfq-desktop-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function continueToWhatsAppWeb() {
+  trackConversion(function() {
+    closeRfqModal();
+    window.open(currentRfqTargetUrl, '_blank', 'noopener,noreferrer');
+  });
+}
+
+function submitDesktopRfq(e) {
+  e.preventDefault();
+  const co = document.getElementById('rfq-company').value.trim();
+  const loc = document.getElementById('rfq-location').value.trim();
+  const phone = document.getElementById('rfq-phone').value.trim();
+  const email = document.getElementById('rfq-email').value.trim();
+  const needs = document.getElementById('rfq-needs').value.trim();
+
+  let formattedMsg = `*PERMINTAAN PENAWARAN RESMI (RFQ DESKTOP)*\n`;
+  formattedMsg += `- Perusahaan: ${co}\n`;
+  formattedMsg += `- Lokasi Kawasan: ${loc}\n`;
+  formattedMsg += `- No PIC / Telp: ${phone}\n`;
+  formattedMsg += `- Email Kantor: ${email || '-'}\n`;
+  formattedMsg += `- Kebutuhan: ${needs || 'Permintaan survey resmi'}`;
+  formattedMsg += getCampaignSuffix();
+
+  // Trigger Google Ads conversion
+  trackConversion(function() {
+    // Tampilkan pesan sukses di modal
+    document.getElementById('rfq-desktop-form').classList.add('hidden');
+    document.getElementById('rfq-success-message').classList.remove('hidden');
+
+    // Buka fallback WA dengan pesan yang sudah terstruktur rapi
+    const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(formattedMsg)}`;
+    setTimeout(function() {
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    }, 600);
   });
 }
 
@@ -319,5 +493,10 @@ document.addEventListener('DOMContentLoaded', function() {
   telLinks.forEach(function(link) {
     link.href = `tel:${CONFIG.whatsappNumber}`;
   });
+
+  // Siapkan DOM modal jika dibuka di perangkat layar lebar
+  if (isDesktopDevice()) {
+    injectRfqModalDOM();
+  }
 });
 
