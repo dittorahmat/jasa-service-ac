@@ -111,10 +111,153 @@ function getCampaignSuffix() {
 captureCampaignParams();
 
 /**
+ * Dynamic Text Replacement (DTR) & Safe Keyword Adaptation Engine
+ * Meningkatkan Ad Relevancy & Quality Score Google Ads secara dinamis
+ */
+const DTR_DICTIONARY = {
+  areas: {
+    'mm2100': {
+      name: 'Kawasan Industri MM2100',
+      badge: 'Coverage: Kawasan Industri MM2100 Cikarang Barat',
+      waKey: 'b2bMM2100'
+    },
+    'jababeka': {
+      name: 'Kawasan Industri Jababeka (I-VI)',
+      badge: 'Coverage: Kawasan Industri Jababeka I-VI Cikarang',
+      waKey: 'b2bJababeka'
+    },
+    'kiic': {
+      name: 'Kawasan Industri KIIC Karawang',
+      badge: 'Coverage: Kawasan Industri KIIC Karawang Barat',
+      waKey: 'b2bKIIC'
+    },
+    'ejip': {
+      name: 'Kawasan Industri EJIP Cikarang',
+      badge: 'Coverage: Kawasan Industri EJIP Cikarang Selatan',
+      waKey: 'b2bEJIP'
+    },
+    'giic': {
+      name: 'Kawasan Industri GIIC Deltamas',
+      badge: 'Coverage: Kawasan Industri GIIC Kota Deltamas',
+      waKey: 'b2bGIIC'
+    },
+    'deltasilicon': {
+      name: 'Kawasan Delta Silicon Lippo Cikarang',
+      badge: 'Coverage: Kawasan Delta Silicon (1-8) Cikarang',
+      waKey: 'b2bDeltaSilicon'
+    },
+    'suryacipta': {
+      name: 'Kawasan Industri Suryacipta Karawang',
+      badge: 'Coverage: Kawasan Industri Suryacipta Karawang Timur',
+      waKey: 'b2bSuryacipta'
+    }
+  },
+  services: {
+    'chiller': {
+      name: 'Chiller Industri & AHU',
+      headlinePrefix: 'Vendor Kontrak Maintenance & Overhaul Chiller Industri',
+      waKey: 'b2bChiller'
+    },
+    'ahu': {
+      name: 'AHU Cleanroom & Tata Udara',
+      headlinePrefix: 'Spesialis Maintenance & Service AHU Cleanroom Pabrik',
+      waKey: 'b2bAHU'
+    },
+    'vrv': {
+      name: 'Sistem VRV / VRF Inverter',
+      headlinePrefix: 'Vendor Perawatan & Service AC Central VRV / VRF',
+      waKey: 'b2bVRV'
+    },
+    'maintenance': {
+      name: 'Kontrak Maintenance HVAC Berkala',
+      headlinePrefix: 'Vendor Kontrak Maintenance & Service HVAC Pabrik',
+      waKey: 'b2bSurvey'
+    }
+  }
+};
+
+let activeDtrContext = null;
+
+function detectDTR() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const rawArea = (params.get('area') || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const rawService = (params.get('service') || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    const areaMatch = DTR_DICTIONARY.areas[rawArea] || null;
+    const serviceMatch = DTR_DICTIONARY.services[rawService] || null;
+
+    if (areaMatch || serviceMatch) {
+      activeDtrContext = {
+        area: areaMatch,
+        service: serviceMatch
+      };
+      return activeDtrContext;
+    }
+  } catch (e) {
+    // Fail-safe
+  }
+  return null;
+}
+
+function initDynamicTextReplacement() {
+  const dtr = detectDTR();
+  if (!dtr) return;
+
+  // 1. Update Badge
+  const badgeEl = document.querySelector('[data-dtr-badge]');
+  if (badgeEl && dtr.area) {
+    badgeEl.textContent = dtr.area.badge;
+  }
+
+  // 2. Update Headline
+  const headlineEl = document.querySelector('[data-dtr-headline]');
+  if (headlineEl) {
+    let headlineText = '';
+    if (dtr.service && dtr.area) {
+      headlineText = `${dtr.service.headlinePrefix} ${dtr.area.name}`;
+    } else if (dtr.service) {
+      headlineText = `${dtr.service.headlinePrefix} Bekasi, Cikarang & Karawang`;
+    } else if (dtr.area) {
+      headlineText = `Vendor Kontrak Maintenance & Service HVAC ${dtr.area.name}`;
+    }
+
+    if (headlineText) {
+      headlineEl.textContent = headlineText;
+    }
+  }
+
+  // 3. Update Quick Form default facility if matched
+  const locationSelect = document.getElementById('facilityLocation');
+  if (locationSelect && dtr.area) {
+    const areaLower = dtr.area.name.toLowerCase();
+    for (let i = 0; i < locationSelect.options.length; i++) {
+      if (locationSelect.options[i].text.toLowerCase().includes(areaLower.substring(0, 4))) {
+        locationSelect.selectedIndex = i;
+        break;
+      }
+    }
+  }
+}
+
+// Jalankan DTR sedini mungkin
+detectDTR();
+
+/**
  * Generate link WhatsApp dengan teks terenkripsi URI dan atribusi iklan
  */
 function getWhatsAppUrl(type) {
-  const baseText = CONFIG.messages[type] || CONFIG.messages.general;
+  // Bila ada konteks DTR aktif dan type adalah generic b2bSurvey, arahkan ke pesan yang lebih spesifik
+  let resolvedType = type;
+  if (activeDtrContext && (type === 'b2bSurvey' || !type)) {
+    if (activeDtrContext.service && activeDtrContext.service.waKey) {
+      resolvedType = activeDtrContext.service.waKey;
+    } else if (activeDtrContext.area && activeDtrContext.area.waKey) {
+      resolvedType = activeDtrContext.area.waKey;
+    }
+  }
+
+  const baseText = CONFIG.messages[resolvedType] || CONFIG.messages[type] || CONFIG.messages.general;
   const fullText = baseText + getCampaignSuffix();
   return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(fullText)}`;
 }
@@ -162,6 +305,8 @@ function handlePhoneClick(event, phoneNumber) {
  * untuk mendukung aksesibilitas, klik kanan, dan navigasi keyboard
  */
 document.addEventListener('DOMContentLoaded', function() {
+  initDynamicTextReplacement();
+
   const waLinks = document.querySelectorAll('[data-wa-type]');
   waLinks.forEach(function(link) {
     const type = link.getAttribute('data-wa-type');
@@ -175,3 +320,4 @@ document.addEventListener('DOMContentLoaded', function() {
     link.href = `tel:${CONFIG.whatsappNumber}`;
   });
 });
+

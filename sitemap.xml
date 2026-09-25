@@ -126,4 +126,32 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+  <!-- B2B Problem Solving: Server Room / Data Center Precision HVAC -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-ruang-server-datacenter.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- B2B Problem Solving: Chiller Overheat & High Pressure Trip Mitigation -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/solusi-chiller-overheat-trip.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- B2B Industry Vertical: Pharma & Cleanroom CPOB HVAC -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-industri-farmasi-cleanroom.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- B2B Industry Vertical: Food & Beverage HACCP Hygiene HVAC -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-industri-makanan-minuman.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 </urlset>

@@ -35,15 +35,17 @@ Landing: Hub Kawasan & Beranda B2B           Landing: https://domain.com/b2c.htm
 Struktur: Single Theme Ad Groups (STAG)      Struktur: Geografis & Layanan Cepat
 ```
 
-### Pemetaan Ad Groups B2B (STAG):
-1. **AG - MM2100 Cibitung** &rarr; URL: `hvac-mm2100.html` (Fokus otomotif, logistik, toleransi downtime ketat).
-2. **AG - Jababeka Cikarang** &rarr; URL: `hvac-jababeka.html` (Fokus cleanroom, HEPA filter, F&B, Jababeka 1-6).
-3. **AG - KIIC Karawang Barat** &rarr; URL: `hvac-kiic.html` (Fokus industri berat, chiller 50-300 TR, standar PMA Jepang).
-4. **AG - EJIP Cikarang Selatan** &rarr; URL: `hvac-ejip.html` (Fokus industri presisi, sistem VRV/VRF, kontrol kelembapan).
+### Pemetaan Ad Groups B2B (STAG & DTR Enabled):
+1. **AG - MM2100 Cibitung** &rarr; URL: `hvac-mm2100.html?area=MM2100&service=Maintenance` (Fokus otomotif, logistik, toleransi downtime ketat).
+2. **AG - Jababeka Cikarang** &rarr; URL: `hvac-jababeka.html?area=Jababeka&service=Maintenance` (Fokus cleanroom, HEPA filter, F&B, Jababeka 1-6).
+3. **AG - KIIC Karawang Barat** &rarr; URL: `hvac-kiic.html?area=KIIC&service=Maintenance` (Fokus industri berat, chiller 50-300 TR, standar PMA Jepang).
+4. **AG - EJIP Cikarang Selatan** &rarr; URL: `hvac-ejip.html?area=EJIP&service=VRV` (Fokus industri presisi, sistem VRV/VRF, kontrol kelembapan).
 5. **AG - Diagnostic Kode Error** &rarr; URL: `panduan-kode-error-ac-industri.html` (Fokus pencarian darurat alarm Daikin, York, dll).
-6. **AG - Chiller Industri** &rarr; URL: `service-chiller-industri.html` (Fokus overhaul kompresor screw/centrifugal, descaling kondensor kimia & mechanical).
-7. **AG - AHU Cleanroom** &rarr; URL: `maintenance-ahu-cleanroom.html` (Fokus tata udara CPOB farmasi, penggantian filter HEPA H14, airflow balancing).
-8. **AG - AC VRV VRF** &rarr; URL: `service-ac-vrv-vrf.html` (Fokus multi-split inverter Daikin VRV / Mitsubishi City Multi, tracing kebocoran refnet).
+6. **AG - Chiller Industri** &rarr; URL: `service-chiller-industri.html?service=Chiller` (Fokus overhaul kompresor screw/centrifugal, descaling kondensor kimia & mechanical).
+7. **AG - AHU Cleanroom** &rarr; URL: `maintenance-ahu-cleanroom.html?service=AHU` (Fokus tata udara CPOB farmasi, penggantian filter HEPA H14, airflow balancing).
+8. **AG - AC VRV VRF** &rarr; URL: `service-ac-vrv-vrf.html?service=VRV` (Fokus multi-split inverter Daikin VRV / Mitsubishi City Multi, tracing kebocoran refnet).
+9. **AG - HVAC Industri Farmasi** &rarr; URL: `hvac-industri-farmasi-cleanroom.html?service=Pharma` (Fokus ruang bersih CPOB Class A-D, DOP test HEPA H14, pressure cascade, siap audit BPOM).
+10. **AG - HVAC Pabrik Makanan & Minuman** &rarr; URL: `hvac-industri-makanan-minuman.html?service=FNB` (Fokus kepatuhan HACCP/FSSC 22000, anti-kondensasi plafon ruang kemas, sanitasi food-safe coil cleaner).
 
 ### Pemetaan Ad Groups B2C (Hiper-Lokal & Layanan Cepat):
 1. **AG - Cuci AC Panggilan** &rarr; URL: `b2c.html` (Fokus umum Bekasi, Depok, Karawang).
@@ -217,12 +219,18 @@ Mengaktifkan ekstensi memperbesar ukuran iklan di hasil pencarian dan **meningka
 
 ## 6. Master Negative Keywords List (Proteksi Anti-Boncos)
 
-Daftar ini sudah terangkum dalam `docs/google-ads-bulk-negative-keywords.csv`. Kata kunci berikut **wajib diblokir** agar budget klik Anda tidak habis untuk pencari loker, mahasiswa, atau barang rumah tangga:
+Daftar ini sudah diperbarui secara lengkap dalam `docs/bulk-negative-keywords.csv` dan panduan mendalam di `docs/google-ads-negative-keywords.md`. Kata kunci berikut **wajib diblokir** agar budget klik Anda terlindungi dari klik yang tidak relevan:
 
-* **Lowongan & Karir**: `lowongan`, `lowongan kerja`, `loker`, `info loker`, `gaji`, `gaji teknisi`, `magang`, `internship`, `karir`, `recruitment`, `lamaran`.
-* **Materi Belajar & DIY**: `cara memperbaiki`, `cara servis sendiri`, `tutorial`, `belajar`, `kursus`, `skema`, `skema kelistrikan`, `diagram`, `wiring diagram`, `makalah`, `skripsi`, `buku`, `pdf`, `youtube`, `video`.
-* **E-Commerce & Barang Bekas**: `tokopedia`, `shopee`, `bukalapak`, `lazada`, `olx`, `harga remote ac`, `kapasitor 15 uf`, `modul ac bekas`, `jual beli bekas`.
-* **Non-HVAC Gedung**: `ac mobil`, `service ac mobil terdekat`, `bengkel ac mobil`, `kulkas`, `mesin cuci`, `dispenser`, `freezer daging rumahan`, `kipas angin`, `air cooler mini`.
+* **Kampanye B2B Industri (Anti-Residential Leakage)**:
+  - `rumah`, `perumahan`, `kontrakan`, `kost`, `kos-kosan`, `kosan`, `apartemen`, `kamar`, `rumahan`.
+  - `1/2 pk`, `0.5 pk`, `1/2pk`, `3/4 pk`, `0.75 pk`, `1 pk`, `1pk`.
+  - `kulkas`, `mesin cuci`, `dispenser`, `freezer daging rumahan`, `kipas angin`, `air cooler mini`, `ac mobil`.
+* **Kampanye B2C Residensial (Anti-Industrial Overload)**:
+  - `chiller`, `ahu`, `cleanroom`, `cooling tower`, `cpob`, `hepa filter`, `pabrik`, `kawasan industri`, `mm2100`, `kiic`, `ejip`, `jababeka`, `suryacipta`, `csms`, `e-faktur pabrik`.
+* **Query Non-Komersial & Lowongan (Keduanya)**:
+  - `lowongan`, `lowongan kerja`, `loker`, `info loker`, `gaji`, `gaji teknisi`, `magang`, `internship`, `karir`.
+  - `cara memperbaiki`, `cara servis sendiri`, `tutorial`, `belajar`, `kursus`, `skema`, `diagram`, `wiring diagram`, `youtube`, `pdf`.
+  - `tokopedia`, `shopee`, `bukalapak`, `lazada`, `olx`, `harga remote ac`, `kapasitor 15 uf`, `modul ac bekas`, `jual beli bekas`.
 
 ---
 
