@@ -7,6 +7,20 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- B2B Cikarang Industrial Cluster Page -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/kawasan-industri-cikarang.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2B Karawang Industrial Cluster Page -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/kawasan-industri-karawang.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- B2C Residential AC Service Landing Page -->
   <url>
     <loc>https://jasa-service-ac.tech1solusi.workers.dev/b2c.html</loc>
