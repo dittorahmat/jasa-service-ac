@@ -7,25 +7,123 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- B2B Industrial Geo Landing: MM2100 Cikarang Barat -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-mm2100.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2B Industrial Geo Landing: Jababeka (I-VI) Cikarang -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-jababeka.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2B Industrial Geo Landing: EJIP Cikarang Selatan -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-ejip.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2B Industrial Geo Landing: KIIC Karawang Barat -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-kiic.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2B Industrial Geo Landing: Suryacipta Karawang Timur (KM 54) -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-suryacipta.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2B Industrial Geo Landing: Delta Silicon (1-8) Lippo Cikarang -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-deltasilicon.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2B Industrial Geo Landing: GIIC Kota Deltamas Cikarang Pusat -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-giic-deltamas.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- B2B Cikarang Industrial Cluster Page -->
   <url>
     <loc>https://jasa-service-ac.tech1solusi.workers.dev/kawasan-industri-cikarang.html</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <!-- B2B Karawang Industrial Cluster Page -->
   <url>
     <loc>https://jasa-service-ac.tech1solusi.workers.dev/kawasan-industri-karawang.html</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
+  </url>
+  <!-- B2B Diagnostic & Error Code Problem Hub -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/panduan-kode-error-ac-industri.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <!-- B2C Residential AC Service Landing Page -->
   <url>
     <loc>https://jasa-service-ac.tech1solusi.workers.dev/b2c.html</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <!-- B2B Industrial System: Chiller Service & Overhaul -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/service-chiller-industri.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2B Industrial System: AHU Cleanroom CPOB Maintenance -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/maintenance-ahu-cleanroom.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2B Industrial System: VRV / VRF Inverter Service -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/service-ac-vrv-vrf.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2C Micro-Location: Grand Wisata Tambun -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/cuci-ac-grand-wisata.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- B2C Micro-Location: Kota Harapan Indah Bekasi -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/service-ac-harapan-indah.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- B2C Micro-Location: Summarecon Bekasi -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/service-ac-summarecon-bekasi.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
 </urlset>
