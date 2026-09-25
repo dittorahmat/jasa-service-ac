@@ -5,7 +5,7 @@
 
 const CONFIG = {
   // Ganti dengan nomor WhatsApp resmi CV Rifqi AC (format internasional tanpa tanda +, misal: 6281234567890)
-  whatsappNumber: "6281288888888",
+  whatsappNumber: "6281385808284",
   
   // Ganti dengan ID Google Ads Anda (misal: AW-123456789/AbCdEfGhIjK)
   googleAdsId: "AW-CONVERSION_ID",

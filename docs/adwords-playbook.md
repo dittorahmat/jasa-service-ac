@@ -255,7 +255,7 @@ Google mengizinkan hingga 15 Headlines (maksimal 30 karakter) dan 4 Descriptions
 
 Mengaktifkan ekstensi akan **memperbesar ukuran visual iklan di Google** dan **meningkatkan CTR hingga 15-20%**:
 
-1. **Call Asset (Nomor Telepon)**: Masukkan nomor telepon resmi `0812-8888-8888` agar tombol "Call" langsung muncul di Google pencarian mobile.
+1. **Call Asset (Nomor Telepon)**: Masukkan nomor telepon resmi `0813-8580-8284` agar tombol "Call" langsung muncul di Google pencarian mobile.
 2. **Sitelink Assets**:
    - *Sitelink 1*: "Kontrak Maintenance B2B" (URL: `https://domain.com/#kapabilitas`)
    - *Sitelink 2*: "Daftar Biaya Servis Rumah" (URL: `https://domain.com/b2c.html#harga`)
@@ -307,7 +307,7 @@ Landing page `index.html` dan `b2c.html` sudah siap dipasangi tag Google Ads. Ik
    - Count: **One** (satu konversi per klik).
 4. Ambil **Conversion ID** dan **Conversion Label** yang diberikan Google (misal: `AW-123456789/AbC_xyz123`).
 5. Buka file `assets/js/tracking.js` di project ini:
-   - Ubah `whatsappNumber: "6281288888888"` dengan nomor WA asli Anda.
+   - Ubah `whatsappNumber: "6281385808284"` dengan nomor WA asli Anda.
    - Ubah `googleAdsSendTo: "AW-123456789/AbC_xyz123"` sesuai ID konversi dari Google.
 6. Letakkan Google Tag snippet (`<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXX">...`) di bagian `<head>` file `index.html` dan `b2c.html`.
 
