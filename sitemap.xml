@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- B2B Industrial HVAC Landing Page (Primary) -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- B2C Residential AC Service Landing Page -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/b2c.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

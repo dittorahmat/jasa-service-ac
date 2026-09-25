@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jasa-service-ac.tech1solusi.workers.dev/sitemap.xml
