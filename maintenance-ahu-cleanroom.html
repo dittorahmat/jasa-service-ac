@@ -24,68 +24,104 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/tracking.js"></script>
 
-  <!-- Schema.org JSON-LD (HVACBusiness & AHU Cleanroom Service Catalog) -->
+  <!-- Schema.org JSON-LD (HVACBusiness & AHU Cleanroom Service Catalog + HowTo) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HVACBusiness",
-    "@id": "https://jasa-service-ac.tech1solusi.workers.dev/maintenance-ahu-cleanroom.html#business",
-    "name": "CV Rifqi AC - Spesialis Maintenance AHU & Cleanroom CPOB",
-    "alternateName": ["CV Rifqi Berkah Teknik AHU Cleanroom", "Kontraktor Tata Udara Cleanroom Pabrik"],
-    "description": "Layanan pemeliharaan, pencucian cooling coil AHU, penggantian filter udara primer, medium & HEPA H13/H14, pengujian diferensial tekanan, dan penyeimbangan aliran udara untuk cleanroom farmasi dan industri presisi.",
-    "url": "https://jasa-service-ac.tech1solusi.workers.dev/maintenance-ahu-cleanroom.html",
-    "telephone": "+6281385808284",
-    "priceRange": "$$$",
-    "currenciesAccepted": "IDR",
-    "paymentAccepted": "Cash, Bank Transfer",
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -6.241586,
-      "longitude": 106.992416
-    },
-    "areaServed": [
-      { "@type": "AdministrativeArea", "name": "Kawasan Industri Jababeka (I-VI)" },
-      { "@type": "AdministrativeArea", "name": "Kawasan Industri Delta Silicon Lippo Cikarang" },
-      { "@type": "AdministrativeArea", "name": "Kawasan Industri KIIC Karawang" },
-      { "@type": "AdministrativeArea", "name": "Kawasan Industri MM2100 Cibitung" },
-      { "@type": "AdministrativeArea", "name": "Kawasan Industri Suryacipta Karawang" }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Layanan AHU & Tata Udara Cleanroom",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Pembersihan & Disinfeksi Cooling Coil AHU Higienis",
-            "description": "Pembersihan cooling coil dan blower fan menggunakan chemical food-grade tanpa residu beracun untuk ruang produksi higienis."
-          }
+    "@graph": [
+      {
+        "@type": "HVACBusiness",
+        "@id": "https://jasa-service-ac.tech1solusi.workers.dev/maintenance-ahu-cleanroom.html#business",
+        "name": "CV Rifqi AC - Spesialis Maintenance AHU & Cleanroom CPOB",
+        "alternateName": ["CV Rifqi Berkah Teknik AHU Cleanroom", "Kontraktor Tata Udara Cleanroom Pabrik"],
+        "description": "Layanan pemeliharaan, pencucian cooling coil AHU, penggantian filter udara bertingkat (Pre, Medium, HEPA H13/H14), pengujian diferensial tekanan, dan penyeimbangan aliran udara untuk cleanroom farmasi dan industri presisi.",
+        "url": "https://jasa-service-ac.tech1solusi.workers.dev/maintenance-ahu-cleanroom.html",
+        "telephone": "+6281385808284",
+        "priceRange": "$$$",
+        "currenciesAccepted": "IDR",
+        "paymentAccepted": "Cash, Bank Transfer",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -6.241586,
+          "longitude": 106.992416
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Supply & Penggantian Filter Udara Bertingkat (Pre, Medium, HEPA)",
-            "description": "Penggantian pre-filter G4, pocket/bag medium filter F7-F9, dan HEPA filter H13/H14 lengkap dengan uji kebocoran integritas filter (DOP/PAO test ready)."
-          }
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Kawasan Industri Jababeka (I-VI)" },
+          { "@type": "AdministrativeArea", "name": "Kawasan Industri Delta Silicon Lippo Cikarang" },
+          { "@type": "AdministrativeArea", "name": "Kawasan Industri KIIC Karawang" },
+          { "@type": "AdministrativeArea", "name": "Kawasan Industri MM2100 Cibitung" },
+          { "@type": "AdministrativeArea", "name": "Kawasan Industri Suryacipta Karawang" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Layanan AHU & Tata Udara Cleanroom",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Pembersihan & Disinfeksi Cooling Coil AHU Higienis",
+                "description": "Pembersihan cooling coil dan blower fan menggunakan chemical food-grade tanpa residu beracun untuk ruang produksi higienis."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Supply & Penggantian Filter Udara Bertingkat (Pre, Medium, HEPA)",
+                "description": "Penggantian pre-filter G4, pocket/bag medium filter F7-F9, dan HEPA filter H13/H14 lengkap dengan uji kebocoran integritas filter (DOP/PAO test ready)."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Airflow Balancing & Differential Pressure Calibration",
+                "description": "Penyesuaian damper udara, static pressure ruang bersih, perputaran udara per jam (ACH), dan sertifikasi pendukung audit CPOB BPOM."
+              }
+            }
+          ]
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Airflow Balancing & Differential Pressure Calibration",
-            "description": "Penyesuaian damper udara, static pressure ruang bersih, perputaran udara per jam (ACH), dan sertifikasi pendukung audit CPOB BPOM."
-          }
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
         }
-      ]
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://jasa-service-ac.tech1solusi.workers.dev/maintenance-ahu-cleanroom.html#howto",
+        "name": "Prosedur Rekayasa Pemeliharaan AHU & Validasi Cleanroom CPOB",
+        "description": "Langkah kerja standar teknisi HVAC untuk menjaga kualitas udara ruang bersih industri farmasi dan semikonduktor sesuai batas regulasi ISO 14644 dan CPOB.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Inspeksi Tekanan Statis & Uji Diferensial Manometer Magnehelic",
+            "text": "Membaca penurunan tekanan (pressure drop) pada pre-filter, medium filter, dan HEPA filter melalui display magnehelic gage untuk mendeteksi filter jenuh atau robek."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Pembersihan Cooling Coil & Drain Pan dengan Food-Grade Chemical",
+            "text": "Membersihkan sirip evaporator coil AHU dari biofilm jamur menggunakan larutan pembersih netral bebas aerosol beracun, serta memverifikasi kelancaran jalur kondensat."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Penggantian Filter Udara Bertingkat & Uji Kebocoran Integritas (PAO/DOP)",
+            "text": "Memasang modul HEPA filter H14 gel-seal baru, memastikan kerapatan gasket housing, dan menjalankan aerosol photometer scanning untuk mendeteksi bypass udara non-steril."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Airflow Balancing, Uji ACH & Kalibrasi Kaskade Tekanan Ruang Positif",
+            "text": "Mengukur total CFM supply/return menggunakan balometer hood, menghitung perputaran udara per jam (Air Changes per Hour), dan mengunci differential pressure kaskade (10-15 Pa)."
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -368,6 +404,117 @@
         </p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- STUDI KASUS REKAYASA LAPANGAN (PROOF OF COMPETENCE) -->
+  <section id="studi-kasus" class="py-12 md:py-16 bg-slate-900 text-white border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-xs font-bold uppercase tracking-wider mb-2">
+            <span>Studi Kasus Kualifikasi Cleanroom</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Pemulihan Uji Partikulat & Kaskade Tekanan Farmasi</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-1 max-w-2xl">
+            Penyelesaian temuan audit berkala CPOB pada fasilitas manufaktur sediaan injeksi steril di Kawasan Industri Jababeka Cikarang.
+          </p>
+        </div>
+        <div class="text-left md:text-right font-mono text-xs text-slate-400">
+          <span>Standar: ISO 14644-1 Class 7 / CPOB Kelas C &bull; Protokol Steril Validated</span>
+        </div>
+      </div>
+
+      <!-- Bento Case Study Card -->
+      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden shadow-2xl">
+        <div class="grid lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-700">
+          
+          <!-- Metrik Ringkasan Kolom Kiri -->
+          <div class="lg:col-span-5 p-6 sm:p-8 bg-slate-800/50 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 font-mono text-xs font-bold">Fasilitas Farmasi &bull; Jababeka</span>
+                <span class="text-xs font-mono text-slate-400">Sistem: AHU 12.000 CFM Dual Coil</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2 leading-snug">
+                Penyelamatan Status Kualifikasi Ruang Injeksi: Dari Temuan Kritis Menjadi Sertifikasi Ulang
+              </h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                Uji berkala partikel airborne (particulate count) di ruang filling injeksi melebihi batas batas ambang partikel 0.5 &mu;m akibat kebocoran gasket gel-seal terminal box HEPA dan deviasi aliran statis return duct.
+              </p>
+
+              <!-- Sebelum & Sesudah Grid Data -->
+              <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-slate-900/90 p-3.5 rounded-xl border border-rose-500/30">
+                  <div class="text-[11px] font-mono text-rose-400 uppercase tracking-wider mb-1">Partikel 0.5 &mu;m (At-Rest)</div>
+                  <div class="text-xl font-mono font-black text-rose-300">482.000 / m&sup3;</div>
+                  <div class="text-[11px] text-slate-400 mt-1">Status: Fail Audit CPOB</div>
+                  <div class="text-xs font-mono text-rose-400/90 mt-1 font-semibold">Tekanan: +4 Pa (Inadekuat)</div>
+                </div>
+                <div class="bg-slate-900/90 p-3.5 rounded-xl border border-emerald-500/30">
+                  <div class="text-[11px] font-mono text-emerald-400 uppercase tracking-wider mb-1">Pasca Intervensi</div>
+                  <div class="text-xl font-mono font-black text-emerald-300">18.400 / m&sup3;</div>
+                  <div class="text-[11px] text-slate-400 mt-1">Standar Kelas C (&le; 352.000)</div>
+                  <div class="text-xs font-mono text-emerald-400/90 mt-1 font-semibold">Tekanan: +14.5 Pa (Presisi)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-700/80 flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">Total Waktu Downtime: 18 Jam</span>
+              <span class="text-xs font-mono font-bold text-emerald-400">Lolos Audit Sertifikasi Ulang</span>
+            </div>
+          </div>
+
+          <!-- Kronologi Rekayasa Teknis Kolom Kanan -->
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider mb-3">Tindakan Rekayasa & Validasi Fisik</div>
+              <ol class="space-y-4 text-xs text-slate-300">
+                <li class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded bg-emerald-900/60 border border-emerald-400/40 text-emerald-300 flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">01</span>
+                  <div>
+                    <strong class="text-white block font-medium">Aerosol Photometer Leak Scanning (Uji PAO/DOP):</strong>
+                    Penyemprotan polyalphaolefin hulu filter dengan probe fotometer hilir untuk memindai pinhole leak pada media filter dan framing flange ceiling.
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded bg-emerald-900/60 border border-emerald-400/40 text-emerald-300 flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">02</span>
+                  <div>
+                    <strong class="text-white block font-medium">Penggantian HEPA Filter H14 Gel-Seal 99.995%:</strong>
+                    Pelepasan filter lama yang bocor di area clamping, pembersihan housing, dan instalasi modul HEPA baru ber-sealant silikon non-outgassing grade medis.
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded bg-emerald-900/60 border border-emerald-400/40 text-emerald-300 flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">03</span>
+                  <div>
+                    <strong class="text-white block font-medium">Disinfeksi Ruang Plenum AHU & Fogging Steril:</strong>
+                    Pembersihan evaporator coil, mist eliminator, dan blower fan AHU menggunakan formula biocide ramah tembaga yang tersertifikasi non-korosif.
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded bg-emerald-900/60 border border-emerald-400/40 text-emerald-300 flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">04</span>
+                  <div>
+                    <strong class="text-white block font-medium">Air Balancing & Penerbitan Dokumen Kualifikasi:</strong>
+                    Penyeimbangan damper CFM kaskade tekanan (+15 Pa koridor vs ruang penyangga), uji recovery time, dan penyerahan Berita Acara resmi bermeterai.
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-slate-700/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="text-xs text-slate-400">
+                Fasilitas cleanroom Anda sedang menghadapi jadwal audit BPOM?
+              </div>
+              <button data-wa-type="b2bAHU" onclick="handleWhatsAppClick(event)" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-5 py-2.5 rounded-lg transition active:scale-95 shadow">
+                <span>Konsultasikan Kualifikasi Cleanroom</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
 

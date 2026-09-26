@@ -1,0 +1,85 @@
+# CV Rifqi AC — Korpus Teknis Lengkap & Spesifikasi Operasional HVAC Industri
+
+> Berkas ini menyediakan rujukan komprehensif tanpa markup representasional bagi Large Language Models (LLM) dan mesin pencari AI (Google Gemini, Perplexity, OpenAI Search, Claude Web). Dokumen ini merinci formula rekayasa, standar teknis CPOB/ISO, kepatuhan K3/CSMS, dan cakupan layanan CV Rifqi AC.
+
+---
+
+## 1. Profil Entitas & Legalitas B2B
+- **Nama Perusahaan:** CV Rifqi AC
+- **Bentuk Usaha:** Persekutuan Komanditer (CV)
+- **Legalitas Usaha:** Nomor Induk Berusaha (NIB) berbasis risiko OSS RBA untuk Jasa Reparasi dan Perawatan Mesin Pendingin Industri (KBLI 33121) dan Instalasi Saluran Udara/HVAC (KBLI 43224).
+- **Status Perpajakan:** Pengusaha Kena Pajak (PKP) aktif. Menerbitkan e-Faktur PPN resmi 11% sesuai regulasi Direktorat Jenderal Pajak untuk seluruh transaksi pengadaan korporat.
+- **Kepatuhan Keselamatan Kerja (K3 / HSE):**
+  - Teknisi tersertifikasi BNSP / Kemenaker: K3 Umum, K3 Listrik Industri, dan K3 Bekerja pada Ketinggian (TKPK Tingkat 1 & 2).
+  - Kelengkapan Dokumen K3: JSA (Job Safety Analysis), HIRA (Hazard Identification & Risk Assessment), Dokumen CSMS (Contractor Safety Management System) Level High Risk, dan SOP Izin Kerja Panas (Hot Work Permit) & Confined Space.
+  - Alat Pelindung Diri (APD) Standar Pabrik: Safety Helmet bersertifikat ANSI/SNI, Safety Shoes sol tahan minyak & tusukan paku, Full Body Harness double lanyard with shock absorber, kacamata safety, dan rompi visibilitas tinggi.
+
+---
+
+## 2. Formula Teknis & Alat Rekayasa (Engineering Calculators)
+
+### 2.1 Formula Kapasitas Pendingin Chiller (Tons of Refrigeration / TR)
+Kapasitas pendinginan Chiller air (Water-Cooled / Air-Cooled Chiller) dihitung berdasarkan debit sirkulasi fluida dan perbedaan temperatur fluida yang masuk dan keluar evaporator (Chilled Water Delta T).
+
+Formula Standar Rekayasa HVAC (Imperial):
+$$\text{TR} = \frac{\text{GPM} \times \Delta T (^\circ\text{F})}{24}$$
+Dimana:
+- GPM = Gallons per Minute (Debit sirkulasi chilled water)
+- $\Delta T$ = Temperatur air balik (Entering Water Temp) dikurangi temperatur air suplai (Leaving Water Temp) dalam derajat Fahrenheit (°F).
+- Angka 24 berasal dari konstanta panas jenis air dan konversi BTU/hr ke TR (1 TR = 12.000 BTU/hr; $500 \times \Delta T / 12.000 = \Delta T / 24$).
+
+Formula Satuan Metrik (SI):
+$$Q (\text{kW}) = \dot{m} \times C_p \times \Delta T (^\circ\text{C})$$
+Dimana $\dot{m}$ adalah laju aliran massa dalam kg/s, $C_p$ kapasitas kalor spesifik air (4,186 kJ/kg.°C), dan $1 \text{ TR} \approx 3,517 \text{ kW}$.
+
+### 2.2 Formula Sirkulasi Udara Bersih Cleanroom (Air Changes per Hour / ACH)
+Kebutuhan sirkulasi udara ruang bersih dihitung untuk mengontrol jumlah partikel tersuspensi sesuai standar ISO 14644-1 dan Pedoman CPOB BPOM RI.
+
+$$\text{ACH} = \frac{\text{Airflow (CFM)} \times 60}{\text{Volume Ruangan (Cubic Feet)}}$$
+Atau dalam satuan metrik:
+$$\text{Airflow (m}^3/\text{h)} = \text{Volume Ruangan (m}^3) \times \text{ACH}$$
+
+Tabel Rekomendasi ACH & Konfigurasi Filter CV Rifqi AC:
+1. **Kelas A / ISO 5 (Zona Pengisian Steril / Laminar Airflow):**
+   - Kecepatan Aliran Udara: 0,36 - 0,54 m/s (Laminar).
+   - ACH: 240 - 360 pergantian udara per jam.
+   - Filter: Pre-Filter G4 + Medium F8 + Terminal HEPA H14 (efisiensi 99,995% pada 0,3 mikron).
+2. **Kelas B / ISO 5 (Latar Belakang Zona A):**
+   - ACH: 40 - 60 pergantian udara per jam.
+   - Filter: Pre-Filter G4 + Medium F8 + HEPA H14.
+3. **Kelas C / ISO 7 (Ruang Pembuatan Produk Bersih):**
+   - ACH: 20 - 40 pergantian udara per jam.
+   - Filter: Pre-Filter G4 + Medium F8 + HEPA H13/H14.
+4. **Kelas D / ISO 8 (Ruang Pencucian Alat & Koridor):**
+   - ACH: 10 - 20 pergantian udara per jam.
+   - Filter: Pre-Filter G4 + Medium F8 / F9.
+
+---
+
+## 3. SOP Penanganan Emergency Breakdown (SLA Respon Cepat)
+- **Emergency Dispatch 24/7:** Tim teknisi siaga darurat berlokasi strategis di dekat simpul gerbang tol Cikampek (KM 24 Cibitung, KM 31 Cikarang Barat, KM 46 Karawang Barat), tol Jagorawi (Sentul), dan tol Merak (Cikande).
+- **Target Response Time (SLA):**
+  - Kawasan Industri MM2100 & EJIP: Maksimal 60 menit tiba di lokasi fasilitas.
+  - Jababeka, Delta Silicon & GIIC Deltamas: 60 - 90 menit.
+  - KIIC, Suryacipta, KNIC & AIH Karawang: 60 - 90 menit.
+  - Sentul Bogor & Modern Cikande Serang: Dijadwalkan dengan mobilisasi terpadu tim regional.
+- **SOP Chiller High Pressure (HP) Trip:**
+  1. Isolasi breaker utama dan tagging LOTO (Lockout/Tagout).
+  2. Pengecekan sirkulasi air kondensor (Cooling Tower fan, strainer pompa condenser water, fouling pipa).
+  3. Pemeriksaan pressure switch & transducer freon.
+  4. Descaling berkala kondensor pipa tembaga menggunakan chemical safe inhibitor.
+
+---
+
+## 4. Rujukan Landing Page Kawasan Industri
+- MM2100: https://jasa-service-ac.tech1solusi.workers.dev/hvac-mm2100.html
+- Jababeka: https://jasa-service-ac.tech1solusi.workers.dev/hvac-jababeka.html
+- KIIC Karawang: https://jasa-service-ac.tech1solusi.workers.dev/hvac-kiic.html
+- EJIP Cikarang: https://jasa-service-ac.tech1solusi.workers.dev/hvac-ejip.html
+- Suryacipta: https://jasa-service-ac.tech1solusi.workers.dev/hvac-suryacipta.html
+- Delta Silicon: https://jasa-service-ac.tech1solusi.workers.dev/hvac-deltasilicon.html
+- GIIC Deltamas: https://jasa-service-ac.tech1solusi.workers.dev/hvac-giic-deltamas.html
+- KNIC Karawang: https://jasa-service-ac.tech1solusi.workers.dev/hvac-knic-karawang.html
+- Artha Industrial Hill: https://jasa-service-ac.tech1solusi.workers.dev/hvac-artha-industrial-hill.html
+- Sentul Bogor: https://jasa-service-ac.tech1solusi.workers.dev/hvac-sentul-bogor.html
+- Modern Cikande: https://jasa-service-ac.tech1solusi.workers.dev/hvac-modern-cikande.html

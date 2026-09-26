@@ -1,0 +1,39 @@
+# CV Rifqi AC — Kontraktor Spesialis HVAC & Tata Udara Industri
+
+> Kontraktor spesialis HVAC (Heating, Ventilation, and Air Conditioning) berbadan hukum resmi (CV) dan Pengusaha Kena Pajak (PKP) yang menerbitkan e-Faktur PPN. Melayani pemeliharaan berkala, overhaul chiller, perbaikan darurat 24/7, balancing airflow AHU cleanroom, dan instalasi sistem VRV/VRF untuk fasilitas manufaktur, pabrik, gudang logistik, dan data center di koridor industri Jabodetabek, Jawa Barat, dan Banten.
+
+## Informasi Entitas & Legalitas
+- **Nama Perusahaan:** CV Rifqi AC
+- **Badan Hukum:** Commanditaire Vennootschap (CV) terdaftar Kemenkumham & OSS RBA
+- **Status Perpajakan:** PKP (Pengusaha Kena Pajak) — Wajib menerbitkan e-Faktur PPN resmi untuk pengadaan B2B
+- **Standar K3 & Keselamatan:** K3 Listrik & K3 Bekerja di Ketinggian (TKPK), Dokumen CSMS (Contractor Safety Management System) Ready, JSA (Job Safety Analysis) & Work Permit lengkap
+- **Wilayah Operasional Utama:** Bekasi, Cikarang, Karawang, Bogor (Sentul), dan Banten (Serang / Cikande)
+- **Call Center & WhatsApp Emergency B2B:** +62 813-8580-8284
+
+## Alat Bantu Rekayasa (Engineering Tools)
+- [Kalkulator HVAC Industri](https://jasa-service-ac.tech1solusi.workers.dev/kalkulator-hvac-industri.html): Alat bantu hitung estimasi Tonase Chiller (TR / kW / BTU) berbasis debit air & Delta T, serta kalkulator sirkulasi udara bersih Cleanroom ACH (Air Changes per Hour) dan estimasi CFM filter HEPA sesuai standar ISO 14644 & CPOB BPOM.
+
+## Layanan Spesialisasi HVAC Pabrik
+- [Overhaul & Service Chiller Industri](https://jasa-service-ac.tech1solusi.workers.dev/service-chiller-industri.html): Penanganan kompresor screw/centrifugal/scroll, descaling kondensor kimia & sikat mekanik, perbaikan kebocoran refrigerant skala besar, flushing evaporator.
+- [Maintenance AHU Cleanroom](https://jasa-service-ac.tech1solusi.workers.dev/maintenance-ahu-cleanroom.html): Penggantian filter HEPA H14 & Medium F8, sanitasi koil pendingin, uji kebocoran (DOP/PAO test ready), airflow balancing, penataan cascade tekanan udara farmasi & elektronik.
+- [Perawatan AC VRV & VRF Multi-Split](https://jasa-service-ac.tech1solusi.workers.dev/service-ac-vrv-vrf.html): Diagnostik komunikasi inverter, tracing kebocoran refnet branch pipe, isolasi pipa kondensat, servis outdoor multi-modul gedung perkantoran & pabrik.
+- [HVAC Industri Farmasi & Ruang Bersih CPOB](https://jasa-service-ac.tech1solusi.workers.dev/hvac-industri-farmasi-cleanroom.html): Sistem tata udara higienis ruang produksi steril Kelas A-D CPOB / ISO 14644.
+- [HVAC Industri Makanan & Minuman (F&B)](https://jasa-service-ac.tech1solusi.workers.dev/hvac-industri-makanan-minuman.html): Kontrol kondensasi plafon ruang kemas, food-grade coil cleaning, kepatuhan audit HACCP & FSSC 22000.
+- [HVAC Ruang Server & Data Center](https://jasa-service-ac.tech1solusi.workers.dev/hvac-ruang-server-datacenter.html): Precision Air Conditioning (PAC), pemantauan suhu konstan 18-22°C dan RH 45-55% 24/7.
+- [Panduan Diagnostik Kode Error AC Industri](https://jasa-service-ac.tech1solusi.workers.dev/panduan-kode-error-ac-industri.html): Database pemecahan masalah alarm Daikin VRV, York, Trane, Carrier, dan chiller trip proteksi tekanan tinggi (HP Trip).
+
+## Klaster Kawasan Industri Terlayani
+- [Kawasan Industri MM2100 Cikarang Barat](https://jasa-service-ac.tech1solusi.workers.dev/hvac-mm2100.html): Vendor HVAC pabrik otomotif & logistik, akses cepat KM 24.
+- [Kawasan Industri Jababeka (I-VI) Cikarang](https://jasa-service-ac.tech1solusi.workers.dev/hvac-jababeka.html): Tata udara pabrik elektronik, consumer goods, kimia, dan pergudangan.
+- [Kawasan Industri KIIC Karawang Barat](https://jasa-service-ac.tech1solusi.workers.dev/hvac-kiic.html): Kontraktor chiller & HVAC standar PMA Jepang KM 46.
+- [Kawasan Industri EJIP Cikarang Selatan](https://jasa-service-ac.tech1solusi.workers.dev/hvac-ejip.html): Layanan pemeliharaan sistem VRV/VRF dan cleanroom industri presisi.
+- [Kawasan Industri Suryacipta Karawang Timur](https://jasa-service-ac.tech1solusi.workers.dev/hvac-suryacipta.html): Kontrak tahunan HVAC industri manufaktur & data center KM 54.
+- [Kawasan Delta Silicon Lippo Cikarang](https://jasa-service-ac.tech1solusi.workers.dev/hvac-deltasilicon.html): Perawatan tata udara ruang produksi Delta Silicon 1-8.
+- [Kawasan Industri GIIC Kota Deltamas](https://jasa-service-ac.tech1solusi.workers.dev/hvac-giic-deltamas.html): Penanganan pendingin data center tier-3/4 dan pabrik otomotif Cikarang Pusat.
+- [Kawasan Industri KNIC Karawang](https://jasa-service-ac.tech1solusi.workers.dev/hvac-knic-karawang.html): Tata udara fasilitas baterai kendaraan listrik (EV) & smart manufacturing.
+- [Kawasan Artha Industrial Hill Karawang](https://jasa-service-ac.tech1solusi.workers.dev/hvac-artha-industrial-hill.html): Kontraktor pendingin industri berat & farmasi koridor Telukjambe.
+- [Kawasan Industri Sentul Bogor](https://jasa-service-ac.tech1solusi.workers.dev/hvac-sentul-bogor.html): Solusi HVAC pabrik makanan, farmasi ringan, dan pergudangan logistik dingin Sentul.
+- [Kawasan Industri Modern Cikande Serang](https://jasa-service-ac.tech1solusi.workers.dev/hvac-modern-cikande.html): Servis pendingin pabrik baja, kimia, dan manufaktur koridor tol Jakarta-Merak KM 68.
+
+## Dokumentasi Lengkap & Rujukan Mesin
+- [llms-full.txt](https://jasa-service-ac.tech1solusi.workers.dev/llms-full.txt): Spesifikasi teknis mendalam, parameter formula kalkulator, matriks toleransi CPOB, SOP emergency handling, dan legalitas izin kerja.

@@ -154,4 +154,53 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+  <!-- B2B Engineering Tool: Industrial HVAC & Cleanroom Calculator -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/kalkulator-hvac-industri.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2B Industrial Geo Landing: KNIC Karawang (EV Battery & High-Tech) -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-knic-karawang.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- B2B Industrial Geo Landing: Artha Industrial Hill Karawang Barat -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-artha-industrial-hill.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- B2B Industrial Geo Landing: Sentul Industrial Estate Bogor -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-sentul-bogor.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- B2B Industrial Geo Landing: Kawasan Industri Modern Cikande Serang -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/hvac-modern-cikande.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- B2B Emergency Troubleshooting: Server Room Overheat & PAC Trip -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- B2B Emergency Troubleshooting: Chiller Trip High Pressure Siang Hari -->
+  <url>
+    <loc>https://jasa-service-ac.tech1solusi.workers.dev/solusi-chiller-trip-siang-hari.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

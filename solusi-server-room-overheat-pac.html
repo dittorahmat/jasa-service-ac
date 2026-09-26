@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solusi Ruang Server Panas & Overheat (Alarm PAC Mati) | CV Rifqi AC</title>
+  <meta name="description" content="Panduan teknis darurat saat suhu ruang server naik di atas 24°C atau alarm Precision Air Conditioner (PAC) trip. Prosedur mitigasi thermal runaway & hotline teknisi 24/7 di Cikarang, Bekasi, Karawang.">
+  <meta name="keywords" content="ruang server overheat, suhu server naik di atas 24 derajat, alarm pac liebert mati, solusi ac data center panas, precision air conditioner trip, teknisi ac ruang server cikarang bekasi karawang, cv rifqi ac">
+  <link rel="canonical" href="https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html">
+  <meta property="og:title" content="Solusi Ruang Server Panas & Overheat (Alarm PAC Mati) | CV Rifqi AC">
+  <meta property="og:description" content="Langkah darurat mengatasi thermal runaway ruang server dan kegagalan failover PAC. Tim teknisi K3 standby dispatch respons 2 jam di kawasan industri.">
+  <meta property="og:image" content="https://jasa-service-ac.tech1solusi.workers.dev/assets/images/hvac-industrial-og.jpg">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="CV Rifqi Berkah Teknik">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/tracking.js"></script>
+
+  <!-- Schema.org JSON-LD (HVACBusiness, HowTo, TechArticle, FAQPage, BreadcrumbList) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HVACBusiness",
+        "@id": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html#business",
+        "name": "CV Rifqi AC - Emergency PAC & Precision Cooling Service",
+        "alternateName": ["Spesialis AC Ruang Server CV Rifqi AC", "Hotline Pendingin Data Center Pabrik"],
+        "description": "Layanan emergency dispatch perbaikan dan pemeliharaan Precision Air Conditioner (PAC) ruang server dan data center pabrik industri di Bekasi, Cikarang, dan Karawang.",
+        "url": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html",
+        "telephone": "+6281385808284",
+        "priceRange": "$$$",
+        "currenciesAccepted": "IDR",
+        "paymentAccepted": "Cash, Bank Transfer",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -6.241586,
+          "longitude": 106.992416
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Kawasan Industri MM2100 Cikarang Barat" },
+          { "@type": "AdministrativeArea", "name": "Kawasan Industri Jababeka Cikarang" },
+          { "@type": "AdministrativeArea", "name": "Kawasan Industri KIIC Karawang Barat" },
+          { "@type": "AdministrativeArea", "name": "Kawasan Industri EJIP Cikarang Selatan" },
+          { "@type": "AdministrativeArea", "name": "Kawasan Delta Silicon Lippo Cikarang" },
+          { "@type": "AdministrativeArea", "name": "Bekasi, Cikarang & Karawang" }
+        ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Beranda B2B",
+            "item": "https://jasa-service-ac.tech1solusi.workers.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Layanan Ruang Server",
+            "item": "https://jasa-service-ac.tech1solusi.workers.dev/hvac-ruang-server-datacenter.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Solusi Server Room Overheat",
+            "item": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html#howto",
+        "name": "Langkah Mitigasi Darurat Ruang Server Mengalami Overheating (Thermal Runaway)",
+        "description": "Prosedur langkah taktis pengamanan ruang server saat suhu ruangan melonjak di atas batas aman 24°C sebelum tim spesialis HVAC/PAC tiba di lokasi.",
+        "totalTime": "PT45M",
+        "supply": [
+          { "@type": "HowToSupply", "name": "Portable Thermo-Hygrometer Terkalibrasi" },
+          { "@type": "HowToSupply", "name": "Unit Blower Cadangan / Mobile Industrial Spot Cooler" }
+        ],
+        "tool": [
+          { "@type": "HowToTool", "name": "Thermal Infrared Camera" },
+          { "@type": "HowToTool", "name": "Panel Controller Key / Display Access Key" }
+        ],
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Verifikasi Suhu Titik Terpanas & Isolasi Hot Aisle",
+            "url": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html#step-1",
+            "text": "Periksa indikator intake udara pada rack server teratas menggunakan infrared thermometer. Pastikan pintu rack tertutup rapat agar aliran udara dingin tidak bercampur dengan exhaust panas."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Periksa Status Failover Redundansi N+1 PAC",
+            "url": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html#step-2",
+            "text": "Cek display kontroler mikroprosesor PAC. Jika unit standby gagal menyala otomatis (auto-switchover fail), lakukan start manual secara berhati-hati melalui panel kontrol lokal."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Inspeksi Tekanan Statis Raised Floor & Filter Udara",
+            "url": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html#step-3",
+            "text": "Pastikan perforated tile di depan rack server tidak tertutup kabel jaringan atau box barang, dan periksa apakah differential pressure switch menunjukkan alarm filter mampet."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Eskalasi Hotline Teknisi Emergency Ber-SLA",
+            "url": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html#step-4",
+            "text": "Jika kompresor PAC trip akibat alarm High Pressure atau kebocoran freon, segera hubungi tim standby CV Rifqi AC untuk dispatch teknisi ber-SLA 2 jam ke area pabrik."
+          }
+        ]
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html#article",
+        "headline": "Solusi Ruang Server Panas & Overheat: Panduan Troubleshooting Darurat Unit PAC Industri",
+        "description": "Analisa komprehensif akar masalah temperatur ruang data center melebihi toleransi ASHRAE, kegagalan sensor kelembapan (RH), dan prosedur penanganan darurat unit pendingin presisi.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tim Engineering HVAC CV Rifqi AC",
+          "url": "https://jasa-service-ac.tech1solusi.workers.dev/"
+        },
+        "publisher": {
+          "@type": "HVACBusiness",
+          "name": "CV Rifqi AC",
+          "url": "https://jasa-service-ac.tech1solusi.workers.dev/",
+          "telephone": "+6281385808284",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://jasa-service-ac.tech1solusi.workers.dev/assets/images/logo.png"
+          }
+        },
+        "datePublished": "2026-09-26",
+        "dateModified": "2026-09-26",
+        "inLanguage": "id-ID",
+        "about": [
+          { "@type": "Thing", "name": "Server Room Overheating" },
+          { "@type": "Thing", "name": "Precision Air Conditioning Troubleshooting" },
+          { "@type": "Thing", "name": "Data Center Thermal Management" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-server-room-overheat-pac.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Berapa batas suhu dan kelembapan standar ruang server sesuai rekomendasi ASHRAE?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Berdasarkan standar ASHRAE TC 9.9, suhu operasional yang direkomendasikan pada sisi intake rack server adalah 18°C hingga 27°C dengan kelembapan relatif (RH) 40% hingga 60%. Suhu di atas 27°C meningkatkan risiko auto-shutdown hardware server secara signifikan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Mengapa AC biasa (Comfort AC) sering gagal menjaga suhu ruang server pabrik?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AC residensial/komersial biasa didesain dengan Sensible Heat Ratio (SHR) rendah (hanya 0.65–0.70) karena membuang banyak energi untuk mengeringkan udara. Sebaliknya, ruang server menghasilkan panas kering murni (sensible heat tinggi) tanpa beban laten keringat manusia, sehingga membutuhkan Precision Air Conditioner (PAC) dengan SHR 0.90–1.0 dan kemampuan operasi non-stop 24/7/365."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Berapa lama response time tim teknisi CV Rifqi AC untuk panggilan darurat ruang server di Cikarang dan Karawang?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kami menerapkan SLA respon darurat 2 hingga 4 jam menuju lokasi kawasan industri utama seperti Jababeka, MM2100, EJIP, Delta Silicon, KIIC, dan Suryacipta dengan teknisi bersertifikat K3 dan perlengkapan diagnostik siap jalan."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-corporate-grayBg text-slate-800 antialiased pb-24 md:pb-0 font-sans selection:bg-sky-500 selection:text-white">
+
+  <!-- TOP COMPLIANCE BAR -->
+  <aside class="bg-corporate-navyDark text-slate-300 text-xs py-2 px-4 sm:px-6 border-b border-corporate-navyLight">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2.5">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 bg-rose-950/80 text-rose-300 font-mono px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wide border border-rose-500/40">
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-ping"></span>
+          EMERGENCY DISPATCH: 2 JAM
+        </span>
+        <span class="font-medium text-white">CV Rifqi Berkah Teknik</span>
+        <span class="hidden md:inline text-slate-600">|</span>
+        <span class="hidden md:inline text-slate-400">Penerbit e-Faktur Pajak PPN &bull; Berizin NIB OSS &bull; Standar K3 Certified</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="hvac-ruang-server-datacenter.html" class="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition text-xs font-semibold">
+          <span>&larr; Halaman Layanan Ruang Server</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVIGATION -->
+  <header class="bg-corporate-navy sticky top-0 z-40 border-b border-corporate-navyLight shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-lg bg-corporate-gold flex items-center justify-center text-corporate-navy font-black text-xl shadow-inner group-hover:scale-105 transition duration-300">
+          R
+        </div>
+        <div>
+          <div class="font-bold text-white tracking-tight leading-tight text-base sm:text-lg">CV RIFQI AC</div>
+          <div class="text-[11px] text-corporate-gold font-medium tracking-wide uppercase">Precision Cooling &amp; Industrial HVAC</div>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-6">
+        <a href="hvac-ruang-server-datacenter.html" class="text-sm font-semibold text-slate-200 hover:text-white transition">Layanan Data Center</a>
+        <a href="panduan-kode-error-ac-industri.html" class="text-sm font-semibold text-slate-200 hover:text-white transition">Kode Error</a>
+        <a href="kalkulator-hvac-industri.html" class="text-sm font-semibold text-slate-200 hover:text-white transition">Kalkulator TR</a>
+        <a href="solusi-chiller-overheat-trip.html" class="text-sm font-semibold text-slate-200 hover:text-white transition">Solusi Chiller</a>
+      </div>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="tel:+6281385808284" 
+           data-tel-link="header_phone"
+           class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white text-xs sm:text-sm font-bold px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-slate-600 transition active:scale-[0.98]">
+          <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span class="hidden sm:inline">Hotline 24 Jam:</span> 0813-8580-8284
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="bg-corporate-navyDark/40 border-b border-corporate-navyLight/50 py-2.5 px-4 sm:px-6" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2 text-xs text-slate-400">
+      <a href="index.html" class="hover:text-corporate-gold transition">Beranda B2B</a>
+      <span>/</span>
+      <a href="hvac-ruang-server-datacenter.html" class="hover:text-corporate-gold transition">Layanan Ruang Server</a>
+      <span>/</span>
+      <span class="text-white font-medium">Solusi Server Room Overheat</span>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="bg-corporate-navy text-white py-12 lg:py-16 border-b border-corporate-navyLight relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#e6a100_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-rose-500/20 text-rose-300 text-xs font-mono px-3 py-1 rounded-full border border-rose-500/30 mb-4">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          PANDUAN TROUBLESHOOTING DARURAT IT &amp; FACILITY
+        </div>
+        <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-4">
+          Suhu Ruang Server Naik di Atas 24°C? Solusi Darurat Alarm PAC Mati &amp; Overheat
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+          Ketika unit Precision Air Conditioner (PAC) trip atau sistem redundansi gagal switch-over, temperatur rack server dapat melonjak 1°C setiap menit. Pelajari prosedur mitigasi awal untuk mencegah shutdown massal dan hubungi tim spesialis HVAC dengan SLA dispatch 2 jam di kawasan industri.
+        </p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="https://wa.me/6281385808284?text=Halo%20CV%20Rifqi%20AC,%20EMERGENCY%20suhu%20ruang%20server%20kami%20naik%20dan%20alarm%20PAC%20mati%20di%20kawasan%20industri.%20Mohon%20dispatch%20teknisi%20segera."
+             data-wa-type="lead_b2b_emergency"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3.5 rounded-lg shadow-lg hover:shadow-emerald-600/30 transition active:scale-[0.98]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.071.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+            Dispatch Teknisi Emergency WA
+          </a>
+          <a href="tel:+6281385808284"
+             data-tel-link="hero_phone"
+             class="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold text-sm px-6 py-3.5 rounded-lg border border-slate-700 transition active:scale-[0.98]">
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Telepon Siaga (0813-8580-8284)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRITICAL METRICS SECTION -->
+  <section class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-xl sm:text-3xl font-extrabold text-corporate-navy tracking-tight">
+          Parameter Ambang Kritis Pendinginan Ruang Server
+        </h2>
+        <p class="text-slate-600 text-sm mt-2">
+          Penyimpangan parameter di luar rentang berikut memicu thermal runaway dan degradasi masa pakai komponen IT:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl text-center">
+          <div class="text-xs font-mono font-bold uppercase text-slate-500 mb-1">Target Suhu Optimal</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-corporate-navy font-mono mb-2">18°C – 22°C</div>
+          <p class="text-xs text-slate-600">Standar ASHRAE TC 9.9. Toleransi absolut intake depan server tidak boleh melebihi 27°C.</p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl text-center">
+          <div class="text-xs font-mono font-bold uppercase text-slate-500 mb-1">Kelembapan Relatif (RH)</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-corporate-navy font-mono mb-2">45% – 55%</div>
+          <p class="text-xs text-slate-600">&lt;40% risiko lucutan listrik statis (ESD); &gt;60% memicu pengembunan (kondensasi) PCB.</p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl text-center">
+          <div class="text-xs font-mono font-bold uppercase text-slate-500 mb-1">Sensible Heat Ratio (SHR)</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-corporate-navy font-mono mb-2">0.90 – 1.0</div>
+          <p class="text-xs text-slate-600">100% beban pendinginan harus fokus membuang panas perangkat keras, bukan dehumidifikasi berlebih.</p>
+        </div>
+
+        <div class="bg-rose-50 border border-rose-200 p-5 rounded-xl text-center">
+          <div class="text-xs font-mono font-bold uppercase text-rose-600 mb-1">SLA Emergency Dispatch</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-rose-700 font-mono mb-2">2 Jam</div>
+          <p class="text-xs text-rose-600">Respon teknisi standby di area Cikarang, Bekasi, MM2100, Jababeka, EJIP, dan KIIC Karawang.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP-BY-STEP TROUBLESHOOTING SECTION (HOWTO MAPPING) -->
+  <section class="py-12 lg:py-16 bg-corporate-grayBg border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mb-12">
+        <span class="text-xs font-mono font-bold text-corporate-gold uppercase tracking-wider">STANDARD OPERATING PROCEDURE</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-corporate-navy mt-1">
+          4 Langkah Taktis Mitigasi Darurat Ruang Server Overheating
+        </h2>
+        <p class="text-slate-600 text-sm mt-2">
+          Ikuti urutan langkah rekayasa berikut saat temperatur ruang server terindikasi naik drastis sebelum tim spesialis HVAC tiba di fasilitas Anda:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Step 1 -->
+        <div id="step-1" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+          <div class="w-8 h-8 rounded-lg bg-corporate-navy text-corporate-gold font-mono font-bold flex items-center justify-center text-sm mb-4">
+            01
+          </div>
+          <h3 class="text-lg font-bold text-corporate-navy mb-2">
+            Verifikasi Suhu Titik Terpanas &amp; Isolasi Hot Aisle
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Gunakan infrared thermo gun atau thermal camera untuk mencari rack server dengan beban CPU tertinggi. Pastikan pintu depan dan belakang rack tertutup rapat guna mencegah kebocoran sirkulasi udara dingin (cold containment bypass).
+          </p>
+          <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs text-slate-700 font-mono">
+            <strong>Checklist:</strong> Pastikan tidak ada blanking panel rack yang terlepas atau terbuka.
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="step-2" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+          <div class="w-8 h-8 rounded-lg bg-corporate-navy text-corporate-gold font-mono font-bold flex items-center justify-center text-sm mb-4">
+            02
+          </div>
+          <h3 class="text-lg font-bold text-corporate-navy mb-2">
+            Periksa Status Failover Redundansi N+1 PAC
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Periksa panel mikrokontroler unit PAC utama dan standby (Liebert iCOM, Stulz C7000, atau Daikin PAC). Jika unit backup tidak melakukan auto-switchover saat unit utama alarm, aktifkan switchover manual melalui sakelar lokal.
+          </p>
+          <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs text-slate-700 font-mono">
+            <strong>Checklist:</strong> Periksa apakah MCB kompresor atau fan trip di dalam panel daya PAC.
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div id="step-3" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+          <div class="w-8 h-8 rounded-lg bg-corporate-navy text-corporate-gold font-mono font-bold flex items-center justify-center text-sm mb-4">
+            03
+          </div>
+          <h3 class="text-lg font-bold text-corporate-navy mb-2">
+            Inspeksi Tekanan Statis Raised Floor &amp; Airflow
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Cek apakah tekanan udara di bawah lantai raised floor mencukupi. Tumpukan kabel jaringan atau instalasi pipa pemadam gas (FM200) yang semrawut sering memblokir pasokan udara dingin ke perforated floor tiles di depan rack server.
+          </p>
+          <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs text-slate-700 font-mono">
+            <strong>Checklist:</strong> Bersihkan kisi-kisi perforated tile dan cek filter udara intake PAC.
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div id="step-4" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+          <div class="w-8 h-8 rounded-lg bg-corporate-navy text-corporate-gold font-mono font-bold flex items-center justify-center text-sm mb-4">
+            04
+          </div>
+          <h3 class="text-lg font-bold text-corporate-navy mb-2">
+            Eskalasi Hotline Emergency CV Rifqi AC
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Jika kompresor PAC terkunci alarm High Pressure (HP), motor blower EC fan terbakar, atau refrigeran bocor, jangan paksakan reset berulang. Hubungi tim teknisi CV Rifqi AC untuk tindakan darurat dengan suku cadang dan charging gas refrigran onsite.
+          </p>
+          <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200 text-xs text-emerald-800 font-mono">
+            <strong>Kontak Darurat:</strong> WhatsApp 0813-8580-8284 &bull; Standby Area Industri 24 Jam
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMON PAC ALARMS & DIAGNOSTICS -->
+  <section class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mb-10">
+        <h2 class="text-xl sm:text-3xl font-extrabold text-corporate-navy tracking-tight">
+          Daftar Kode Alarm Umum Unit PAC Ruang Server
+        </h2>
+        <p class="text-slate-600 text-sm mt-1">
+          Identifikasi kode peringatan pada display kontroler sebelum menghubungi teknisi:
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm border-collapse border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+          <thead class="bg-corporate-navy text-white text-xs font-mono uppercase tracking-wider">
+            <tr>
+              <th class="p-4 border-b border-slate-300">Alarm / Pesan Display</th>
+              <th class="p-4 border-b border-slate-300">Penyebab Umum</th>
+              <th class="p-4 border-b border-slate-300">Tindakan Lapangan Cepat</th>
+              <th class="p-4 border-b border-slate-300">Resiko Kegagalan</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 bg-white">
+            <tr class="hover:bg-slate-50">
+              <td class="p-4 font-mono font-bold text-rose-600">High Temp Alarm (&gt;26°C)</td>
+              <td class="p-4 text-slate-700">Kompresor tidak cut-in, beban IT melebihi tonase, refrigran kurang</td>
+              <td class="p-4 text-slate-700">Nyalakan PAC backup manual, periksa thermostat return sensor</td>
+              <td class="p-4 font-semibold text-rose-700">Thermal trip server rack</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-4 font-mono font-bold text-amber-600">High Pressure (HP) Cut-Out</td>
+              <td class="p-4 text-slate-700">Kondenser luar terdebu, motor outdoor mati, katup ekspansi macet</td>
+              <td class="p-4 text-slate-700">Periksa putaran kipas kondensor outdoor di rooftop pabrik</td>
+              <td class="p-4 font-semibold text-amber-700">Kompresor terkunci safety</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-4 font-mono font-bold text-sky-600">High Humidity Alarm (&gt;65%)</td>
+              <td class="p-4 text-slate-700">Infiltrasi udara luar dari pintu kabel, drain pan tersumbat</td>
+              <td class="p-4 text-slate-700">Periksa seal pintu ruang server &amp; pastikan pipa pembuangan lancar</td>
+              <td class="p-4 font-semibold text-sky-700">Kondensasi embun pada motherboard</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-4 font-mono font-bold text-purple-600">Loss of Airflow / Fan Fail</td>
+              <td class="p-4 text-slate-700">V-belt blower putus, EC motor driver error, filter clogging</td>
+              <td class="p-4 text-slate-700">Buka panel blower untuk cek kondisi belt dan status putaran impeller</td>
+              <td class="p-4 font-semibold text-purple-700">Evaporator membeku (freezing)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="py-12 lg:py-16 bg-corporate-grayBg border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-corporate-navy tracking-tight">
+          Pertanyaan Seputar Perbaikan AC Ruang Server
+        </h2>
+        <p class="text-slate-600 text-sm mt-2">Hal teknis yang sering ditanyakan tim IT &amp; Facility Management:</p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-corporate-navy text-base sm:text-lg mb-2">
+            Berapa batas suhu dan kelembapan standar ruang server sesuai rekomendasi ASHRAE?
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Berdasarkan standar ASHRAE TC 9.9, suhu operasional yang direkomendasikan pada sisi intake rack server adalah 18°C hingga 27°C dengan kelembapan relatif (RH) 40% hingga 60%. Suhu di atas 27°C meningkatkan risiko auto-shutdown hardware server secara signifikan.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-corporate-navy text-base sm:text-lg mb-2">
+            Mengapa AC biasa (Comfort AC) sering gagal menjaga suhu ruang server pabrik?
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            AC komersial biasa didesain dengan Sensible Heat Ratio (SHR) rendah (0.65–0.70) karena membuang energi untuk kondensasi uap air manusia. Sebaliknya, ruang server menghasilkan panas kering murni (sensible heat tinggi) tanpa beban laten manusia, sehingga membutuhkan Precision Air Conditioner (PAC) dengan SHR 0.90–1.0 dan kemampuan operasi non-stop 24/7/365.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-corporate-navy text-base sm:text-lg mb-2">
+            Berapa lama response time tim teknisi CV Rifqi AC untuk panggilan darurat ruang server di Cikarang dan Karawang?
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Kami menerapkan SLA respon darurat 2 hingga 4 jam menuju lokasi kawasan industri utama seperti Jababeka, MM2100, EJIP, Delta Silicon, KIIC, dan Suryacipta dengan teknisi bersertifikat K3 dan perlengkapan diagnostik siap jalan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA EMERGENCY BAR -->
+  <section class="py-12 bg-corporate-navy text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">
+        Butuh Tim Teknisi Standby untuk Ruang Server Pabrik Anda?
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-6">
+        Jangan biarkan downtime sistem server merugikan operasional produksi. Hubungi tim teknisi CV Rifqi AC berlisensi K3 dan terdaftar PKP e-Faktur sekarang.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="https://wa.me/6281385808284?text=Halo%20CV%20Rifqi%20AC,%20kami%20ingin%20konsultasi%20penanganan%20AC%20ruang%20server%20pabrik."
+           data-wa-type="lead_b2b_emergency"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3.5 rounded-lg shadow-lg hover:shadow-emerald-600/30 transition active:scale-[0.98]">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.071.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+          Hubungi Teknisi via WhatsApp
+        </a>
+        <a href="tel:+6281385808284"
+           data-tel-link="bottom_cta_phone"
+           class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold text-sm px-6 py-3.5 rounded-lg border border-slate-700 transition active:scale-[0.98]">
+          <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Telepon Langsung (0813-8580-8284)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-corporate-navyDark text-slate-400 py-10 border-t border-corporate-navyLight text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <p class="font-bold text-white text-sm">CV Rifqi Berkah Teknik (CV Rifqi AC)</p>
+        <p class="mt-1">Spesialis HVAC Industri &amp; Precision Cooling Ruang Server &bull; Kawasan Industri Bekasi, Cikarang &amp; Karawang</p>
+      </div>
+      <div class="text-center md:text-right">
+        <p>&copy; 2026 CV Rifqi Berkah Teknik. Seluruh Hak Cipta Dilindungi.</p>
+        <p class="text-slate-500 mt-1">PKP e-Faktur Pajak &bull; Legalitas NIB OSS &bull; Sertifikasi K3 Standar Industri</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FIXED BOTTOM BAR MOBILE -->
+  <div class="fixed bottom-0 inset-x-0 bg-corporate-navy border-t border-corporate-navyLight p-3 flex items-center justify-around z-50 md:hidden shadow-2xl">
+    <a href="tel:+6281385808284"
+       data-tel-link="mobile_bottom_phone"
+       class="flex-1 mr-2 inline-flex items-center justify-center gap-1.5 bg-slate-800 text-white font-bold text-xs py-2.5 rounded-lg border border-slate-700 active:scale-[0.98]">
+      <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      Telepon Darurat
+    </a>
+    <a href="https://wa.me/6281385808284?text=Halo%20CV%20Rifqi%20AC,%20emergency%20suhu%20ruang%20server%20overheat%20di%20pabrik."
+       data-wa-type="lead_b2b_emergency"
+       target="_blank" rel="noopener noreferrer"
+       class="flex-1 ml-2 inline-flex items-center justify-center gap-1.5 bg-emerald-600 text-white font-bold text-xs py-2.5 rounded-lg shadow-lg active:scale-[0.98]">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.071.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+      WhatsApp Darurat
+    </a>
+  </div>
+
+</body>
+</html>

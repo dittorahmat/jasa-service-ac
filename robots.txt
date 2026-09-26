@@ -1,4 +1,28 @@
+# robots.txt — CV Rifqi AC
+# Mengizinkan seluruh bot pencarian web dan AI citation crawler untuk merayapi konten publik
+
 User-agent: *
 Allow: /
 
+# Dedicated AI Search & Citation Bots (Allowed for GEO / AI Overviews Grounding)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap & Machine-Readable Context
 Sitemap: https://jasa-service-ac.tech1solusi.workers.dev/sitemap.xml
+# LLM Context: https://jasa-service-ac.tech1solusi.workers.dev/llms.txt

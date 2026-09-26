@@ -22,6 +22,10 @@ const CONFIG = {
     b2bSuryacipta: "Halo CV Rifqi AC, kami dari perusahaan di Kawasan Industri Suryacipta Karawang Timur. Membutuhkan kontraktor resmi HVAC (e-Faktur PPN, CSMS & K3 compliant):\n- Nama Perusahaan:\n- Lokasi Lot/Jalan Suryacipta:\n- Kebutuhan (Overhaul Chiller / AHU / Kontrak Berkala AC Pabrik):\nMohon info jadwal survey teknisi. Terima kasih.",
     b2bDeltaSilicon: "Halo CV Rifqi AC, kami dari fasilitas industri di Kawasan Delta Silicon (1-8) Lippo Cikarang. Ingin konsultasi maintenance HVAC & sistem tata udara higienis:\n- Nama Perusahaan:\n- Lokasi Delta Silicon:\n- Kebutuhan (CPOB/Cleanroom AHU / HEPA Filter / Chiller / Cassette Kantor):\nMohon info jadwal survey teknisi. Terima kasih.",
     b2bGIIC: "Halo CV Rifqi AC, kami dari fasilitas manufaktur/data center di Kawasan Industri GIIC Kota Deltamas Cikarang Pusat. Membutuhkan vendor HVAC profesional:\n- Nama Perusahaan:\n- Blok/Sektor GIIC Deltamas:\n- Kebutuhan (Precision AC PAC / Chiller Central / VRV / Kontrak Maintenance):\nMohon info jadwal survey dan penawaran teknisi. Terima kasih.",
+    b2bKNIC: "Halo CV Rifqi AC, kami dari fasilitas industri di Kawasan Industri KNIC (Karawang New Industry City). Membutuhkan vendor HVAC resmi (e-Faktur PPN, K3 compliant):\n- Nama Perusahaan:\n- Lokasi Kavling KNIC:\n- Kebutuhan (Tata Udara EV Battery / Chiller / Cleanroom / Kontrak Rutin):\nMohon info penawaran dan jadwal survey teknisi. Terima kasih.",
+    b2bAIH: "Halo CV Rifqi AC, kami dari pabrik di Kawasan Artha Industrial Hill (AIH) Karawang Barat. Ingin konsultasi maintenance HVAC & Chiller:\n- Nama Perusahaan:\n- Lokasi Lot AIH:\n- Kebutuhan (Overhaul Chiller / AHU Ruang Produksi / VRV):\nMohon respon ketersediaan tim teknisi. Terima kasih.",
+    b2bSentul: "Halo CV Rifqi AC, kami dari perusahaan di Sentul Industrial Estate Bogor. Membutuhkan jasa service & maintenance tata udara:\n- Nama Perusahaan:\n- Lokasi Kawasan Sentul:\n- Kebutuhan (F&B HVAC / Cold Storage / Chiller / AC Kantor):\nMohon info jadwal survey teknisi. Terima kasih.",
+    b2bCikande: "Halo CV Rifqi AC, kami dari fasilitas manufaktur di Kawasan Industri Modern Cikande Serang. Membutuhkan kontraktor resmi HVAC (e-Faktur PPN & K3):\n- Nama Perusahaan:\n- Lokasi Blok Modern Cikande:\n- Kebutuhan (Chiller Kapasitas Besar / AHU / Kontrak Rutin Pabrik):\nMohon respon jadwal survey tim regional. Terima kasih.",
     b2cCuci: "Halo CV Rifqi AC, saya mau order jasa cuci AC rumah/ruko:\n- Lokasi (Bekasi/Depok/Karawang):\n- Jumlah Unit:\n- Jadwal yang diinginkan:\nBisa dibantu jadwal teknisinya?",
     b2cRepair: "Halo CV Rifqi AC, AC rumah saya bermasalah:\n- Kendala (Bocor air / Tidak dingin / Berisik / Bau):\n- Lokasi (Bekasi/Depok/Karawang):\nMohon info teknisi terdekat yang bisa datang hari ini. Terima kasih.",
     b2bDiagnostic: "Halo CV Rifqi AC, unit pendingin pabrik/gedung kami mengalami error dan butuh bantuan teknisi:\n- Kode Error/Alarm:\n- Merek & Jenis Unit (VRV/Chiller/Cassette):\n- Nama Perusahaan & Lokasi:\nMohon info jadwal inspeksi/kunjungan darurat. Terima kasih.",
@@ -61,16 +65,52 @@ function trackConversion(callback) {
 }
 
 /**
+ * Cookie Helper for 30-Day First-Party Attribution
+ */
+function setAttributionCookie(name, value, days) {
+  try {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + encodeURIComponent(value) + ";" + expires + ";path=/;SameSite=Lax";
+  } catch (e) {
+    // Fail-safe
+  }
+}
+
+function getAttributionCookie(name) {
+  try {
+    const cname = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      if (c.indexOf(cname) === 0) {
+        return c.substring(cname.length, c.length);
+      }
+    }
+  } catch (e) {
+    // Fail-safe
+  }
+  return '';
+}
+
+/**
  * UTM & Campaign Attribution Engine
+ * Dual-storage (sessionStorage + 30-day cookie) with GCLID / WBRAID / GBRAID support
  */
 function captureCampaignParams() {
   try {
     const params = new URLSearchParams(window.location.search);
-    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
+    const trackingKeys = [
+      'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+      'gclid', 'wbraid', 'gbraid'
+    ];
     let found = false;
     let data = {};
 
-    utmKeys.forEach(function(key) {
+    // 1. Ambil dari URL jika ada
+    trackingKeys.forEach(function(key) {
       if (params.has(key)) {
         data[key] = params.get(key);
         found = true;
@@ -78,28 +118,64 @@ function captureCampaignParams() {
     });
 
     if (found) {
-      sessionStorage.setItem('cv_rifqi_campaign', JSON.stringify(data));
+      const serialized = JSON.stringify(data);
+      sessionStorage.setItem('cv_rifqi_campaign', serialized);
+      setAttributionCookie('cv_rifqi_attribution', serialized, 30);
+    } else {
+      // 2. Fallback restore dari cookie jika tab/sesi baru
+      if (!sessionStorage.getItem('cv_rifqi_campaign')) {
+        const savedCookie = getAttributionCookie('cv_rifqi_attribution');
+        if (savedCookie) {
+          sessionStorage.setItem('cv_rifqi_campaign', savedCookie);
+        }
+      }
     }
   } catch (e) {
     // Fail-safe untuk browser dengan mode privasi ketat
   }
 }
 
-function getCampaignSuffix() {
+function getCampaignData() {
   try {
-    const raw = sessionStorage.getItem('cv_rifqi_campaign');
-    if (!raw) return '';
-    const data = JSON.parse(raw);
-    const source = data.utm_source || (data.gclid ? 'google_ads' : '');
+    let raw = sessionStorage.getItem('cv_rifqi_campaign');
+    if (!raw) {
+      raw = getAttributionCookie('cv_rifqi_attribution');
+    }
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function getCampaignSuffix(isDetailed) {
+  try {
+    const data = getCampaignData();
+    if (!data) return '';
+
+    const clickId = data.gclid || data.wbraid || data.gbraid || '';
+    const clickType = data.gclid ? 'GCLID' : (data.wbraid ? 'WBRAID' : (data.gbraid ? 'GBRAID' : ''));
+    const source = data.utm_source || (clickId ? 'google' : '');
     const campaign = data.utm_campaign || '';
     const term = data.utm_term || '';
 
-    if (!source && !campaign && !term) return '';
+    if (!source && !campaign && !term && !clickId) return '';
     
     let parts = [];
     if (source) parts.push(source);
     if (campaign) parts.push(campaign);
     if (term) parts.push('KW: ' + term);
+
+    if (clickId) {
+      if (isDetailed) {
+        parts.push(`${clickType}: ${clickId}`);
+      } else {
+        // Format ringkas pada WhatsApp agar rapi (tampilkan 10 karakter awal & akhir jika panjang)
+        const shortId = clickId.length > 16 
+          ? `${clickId.substring(0, 7)}...${clickId.substring(clickId.length - 5)}`
+          : clickId;
+        parts.push(`${clickType}: ${shortId}`);
+      }
+    }
 
     return `\n\n[Ref Iklan: ${parts.join(' | ')}]`;
   } catch (e) {
@@ -150,6 +226,26 @@ const DTR_DICTIONARY = {
       name: 'Kawasan Industri Suryacipta Karawang',
       badge: 'Coverage: Kawasan Industri Suryacipta Karawang Timur',
       waKey: 'b2bSuryacipta'
+    },
+    'knic': {
+      name: 'Kawasan Industri KNIC Karawang',
+      badge: 'Coverage: Kawasan Industri KNIC Karawang (EV & High-Tech)',
+      waKey: 'b2bKNIC'
+    },
+    'aih': {
+      name: 'Kawasan Artha Industrial Hill Karawang',
+      badge: 'Coverage: Kawasan Artha Industrial Hill (AIH) Telukjambe',
+      waKey: 'b2bAIH'
+    },
+    'sentul': {
+      name: 'Sentul Industrial Estate Bogor',
+      badge: 'Coverage: Sentul Industrial Estate & Babakan Madang Bogor',
+      waKey: 'b2bSentul'
+    },
+    'cikande': {
+      name: 'Kawasan Industri Modern Cikande Serang',
+      badge: 'Coverage: Kawasan Industri Modern Cikande Serang Banten',
+      waKey: 'b2bCikande'
     }
   },
   services: {
@@ -458,7 +554,7 @@ function submitDesktopRfq(e) {
   formattedMsg += `- No PIC / Telp: ${phone}\n`;
   formattedMsg += `- Email Kantor: ${email || '-'}\n`;
   formattedMsg += `- Kebutuhan: ${needs || 'Permintaan survey resmi'}`;
-  formattedMsg += getCampaignSuffix();
+  formattedMsg += getCampaignSuffix(true);
 
   // Trigger Google Ads conversion
   trackConversion(function() {

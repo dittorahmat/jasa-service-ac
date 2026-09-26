@@ -119,6 +119,85 @@
             }
           }
         ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-chiller-overheat-trip.html#howto",
+        "name": "Prosedur Diagnosa & Penanganan Chiller Industri Trip High Pressure (HP)",
+        "description": "Langkah-langkah rekayasa lapangan untuk menangani chiller industri mati mendadak akibat proteksi alarm High Pressure Cut-Out dan overheating kompresor.",
+        "totalTime": "PT6H",
+        "estimatedCost": {
+          "@type": "MonetaryAmount",
+          "currency": "IDR",
+          "value": "Hubungi Tim Engineering untuk Penawaran Resmi"
+        },
+        "supply": [
+          { "@type": "HowToSupply", "name": "Formulated Biodegradable Descaler ber-inhibitor tembaga" },
+          { "@type": "HowToSupply", "name": "Bahan Netralisator Alkali & Kertas Indikator / pH Meter Digital" }
+        ],
+        "tool": [
+          { "@type": "HowToTool", "name": "Digital Manifold Gauge & Thermometer Contact Surface" },
+          { "@type": "HowToTool", "name": "Rotary Tube Cleaning Machine & Flexible Shaft Brush" },
+          { "@type": "HowToTool", "name": "Circulation Descaling Chemical Pump Kit" }
+        ],
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Analisa Approach Temperature & Delta T Air Pendingin",
+            "url": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-chiller-overheat-trip.html#diagnosa-awal",
+            "text": "Ukur perbedaan suhu air masuk dan keluar kondensor (Delta T) serta bandingkan suhu air keluar dengan suhu saturasi refrigeran. Jika approach temperature melampaui 3-5°C di atas batas desain pabrikan, terjadi hambatan transfer panas."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Inspeksi Debit Pompa & Strainer Cooling Tower",
+            "url": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-chiller-overheat-trip.html#inspeksi-cooling-tower",
+            "text": "Periksa tekanan hisap/buang pompa sirkulasi air pendingin dan bersihkan saringan Y-strainer dari lumut atau endapan lumpur yang menghambat laju debit air (GPM)."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Mechanical Brushing & Chemical Descaling Tube Kondensor",
+            "url": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-chiller-overheat-trip.html#descaling-kondensor",
+            "text": "Lakukan flushing kimia tertutup menggunakan chemical descaler ramah tembaga ber-inhibitor, disusul penyikatan mekanis (tube rotary brush) untuk mengikis kerak kalsium dan silika."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Netralisasi pH, Uji Kebocoran & Commissioning Beban Penuh",
+            "url": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-chiller-overheat-trip.html#commissioning-test",
+            "text": "Bilas sistem hingga pH air mencapai 7.0-7.5, periksa kekencangan sensor HP switch, lalu lakukan pengetesan operasional bertahap (load test) hingga mencapai suhu chilled water 7°C stabil."
+          }
+        ]
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://jasa-service-ac.tech1solusi.workers.dev/solusi-chiller-overheat-trip.html#article",
+        "headline": "Solusi Chiller Industri Sering Trip & Overheating (High Pressure Cut-Out)",
+        "description": "Panduan lapangan mengatasi chiller pabrik yang sering mati mendadak akibat alarm proteksi High Pressure, scaling pipa kondensor, dan kenaikan approach temperature.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tim Engineering HVAC CV Rifqi AC",
+          "url": "https://jasa-service-ac.tech1solusi.workers.dev/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "CV Rifqi AC",
+          "url": "https://jasa-service-ac.tech1solusi.workers.dev/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://jasa-service-ac.tech1solusi.workers.dev/assets/images/logo.png"
+          }
+        },
+        "datePublished": "2026-09-25",
+        "dateModified": "2026-09-26",
+        "inLanguage": "id-ID",
+        "about": [
+          { "@type": "Thing", "name": "Chiller High Pressure Cutout" },
+          { "@type": "Thing", "name": "Chemical Descaling Chiller Condenser" },
+          { "@type": "Thing", "name": "HVAC Chiller Overheating Solution" }
+        ]
       }
     ]
   }
